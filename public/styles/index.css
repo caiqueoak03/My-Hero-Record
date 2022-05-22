@@ -29,8 +29,8 @@
 	background-color: #000;
 	border-radius: 10px;
 	padding: 7px;
-	font-family: "Bangers", cursive;
 	font-size: 2rem;
+	font-family: "Bangers", cursive;
 }
 
 #manchete_img {
@@ -41,6 +41,7 @@
 	transform: translate(-50%, -10px);
 	border-radius: 10px;
 	height: 83vh;
+	box-shadow: 0 0 5px 2px black;
 }
 
 .setas-container {
@@ -70,7 +71,7 @@
 }
 
 .texto-container {
-	width: 30%;
+	width: 28%;
 	margin-left: 120px;
 	z-index: 1;
 	color: white;
@@ -93,6 +94,7 @@
 	line-height: 20px;
 	font-size: 1.2rem;
 	text-align: justify;
+	font-family: "Fredoka", sans-serif;
 }
 
 .pag-carrossel-container {
@@ -111,10 +113,6 @@
 	cursor: pointer;
 }
 
-.carrossel-circles:first-child {
-	background-color: #31d9a5;
-}
-
 /* REGISTROS */
 
 .registros-container {
@@ -122,6 +120,7 @@
 	flex-direction: column;
 	background-color: #212124;
 	color: #eee;
+	padding: 0 0 100px;
 }
 
 .registros-title {
@@ -172,3 +171,4 @@
 	/* font-family: "Skranji", cursive; */
 	/* font-family: "Staatliches", cursive;  */
 }
+

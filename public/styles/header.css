@@ -48,7 +48,7 @@ li {
 	height: 120h;
 	font-size: 1.3rem;
 	background-color: #ebde0d;
-	border-bottom: 3px solid #31d9a5;
+	border-bottom: 2px solid #ff3333;
 	display: flex;
 	align-items: center;
 	justify-content: space-evenly;
