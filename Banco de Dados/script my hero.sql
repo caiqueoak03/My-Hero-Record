@@ -1,70 +1,35 @@
-/*
-truncate table dado;
-alter table dado modify column dataDado date default(CURRENT_DATE());
-*/
-CREATE DATABASE soyventure;
+CREATE DATABASE myHeroRecord;
 
-USE soyventure;
+USE myHeroRecord;
 
-CREATE TABLE empresa (
-	idEmpresa int primary key AUTO_INCREMENT,
-	nome varchar(45) not null,
-	cnpj char(14) unique not null
-);
-
-CREATE TABLE funcionario (
-	idFuncionario int AUTO_INCREMENT,
+CREATE TABLE usuario (
+	idUsuario int primary key auto_increment,
 	nome varchar(45) not null,
 	sobrenome varchar(45) not null,
-	email varchar(45) unique not null,
+	email varchar(45) not null unique,
 	senha varchar(45) not null,
-	cargo varchar(45)  not null, check (cargo in ('analista', 'supervisor', 'gerente')),
-	urlImg varchar(300),
-	telFixo char(10),
-	telCelular char(11),
-	fkEmpresa int,
-	foreign key (fkEmpresa) references empresa(idEmpresa),
-	primary key (idFuncionario, fkEmpresa)
+	perfil varchar(45) not null, check (perfil in ('comum', 'profissional')),
+	nomeHeroi varchar(45),
+	numLicença char(11),
+	individualidade varchar(300),
+	imgPerfilURL varchar(300),
+	imgCapaURL varchar(300)
 );
 
-CREATE TABLE fazenda (
-	idFazenda INT PRIMARY KEY AUTO_INCREMENT,
-	nome varchar(45) not null,
-	cep char(8) unique not null,
-	areaHectare decimal(10,2) not null,
-	qtdSetores int  not null,
-	telFixo char(10),
-	telCelular char(11)
-); 
-
-create table contrato (
-	fkFuncionario int,
-	fkFazenda int,
-	foreign key (fkFuncionario) references funcionario(idFuncionario),
-	foreign key (fkFazenda) references fazenda(idFazenda),
-	primary key (fkFuncionario, fkFazenda)
+CREATE TABLE avaliação (
+	fkFã int,
+	fkHeroi int,
+    nota int,
+	foreign key (fkFã) references usuario (idUsuario),
+	foreign key (fkHeroi) references usuario (idUsuario),
+	primary key (fkFã, fkHeroi)
 );
 
-create table setor (
-	idSetor int AUTO_INCREMENT,
-	nome varchar(45) not null,
-	modeloSensor varchar(45) default 'HOBOnet T11',
-	longitudeSensor decimal(4,2),
-	latitudeSensor decimal(4,2),
-	fkFazenda int,
-	foreign key (fkFazenda) references fazenda(idFazenda),
-	primary key (idSetor, fkFazenda)
-);
-
-create table dado (
-	idDado int AUTO_INCREMENT,
-	temperatura decimal(3,1),
-	umidade decimal(4,1),
-	dataDado date default(CURRENT_DATE),
-	tempoDado time default(CURRENT_TIME),
-	fkSetor int,
-	setor_fkFazenda int,
-	foreign key (fkSetor) references setor(idSetor),
-	foreign key (setor_fkFazenda) references setor(fkFazenda),
-	primary key (idDado, fkSetor, setor_fkFazenda)
+CREATE TABLE registro (
+	idRegistro int primary key auto_increment,
+	titulo varchar(45),
+	descrição varchar(300),
+    imgCapaURL varchar(300),
+	fkHeroi int,
+	foreign key (fkHeroi) references usuario (idUsuario)
 );
