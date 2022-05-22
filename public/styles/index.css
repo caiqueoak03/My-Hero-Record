@@ -1,13 +1,18 @@
-* {
-	/* font-family: "Bangers", cursive;
-	font-family: "Black Ops One", cursive;
-	font-family: "Bungee Inline", cursive;
-	font-family: "Fredoka", sans-serif;
-	font-family: "Luckiest Guy", cursive;
-	font-family: "Monoton", cursive;
-	font-family: "Sigmar One", cursive;
-	font-family: "Skranji", cursive;
-	font-family: "Staatliches", cursive; */
+@keyframes setaAnimationLeft {
+	from {
+		transform: translateX(2px);
+	}
+	to {
+		transform: translateX(-4px);
+	}
+}
+@keyframes setaAnimationRight {
+	from {
+		transform: translateX(-2px);
+	}
+	to {
+		transform: translateX(4px);
+	}
 }
 
 /* MANCHETE */
@@ -55,6 +60,14 @@
 	z-index: 1;
 }
 
+#seta_esquerda {
+	animation: setaAnimationLeft infinite 0.3s alternate-reverse;
+}
+
+#seta_direita {
+	animation: setaAnimationRight infinite 0.3s alternate-reverse;
+}
+
 .setas-container i {
 	color: #31d9a5;
 	font-size: 2rem;
@@ -68,6 +81,7 @@
 }
 .setas-container i:hover {
 	box-shadow: 0 0 5px 0px black;
+	animation: none;
 }
 
 .texto-container {
@@ -171,4 +185,3 @@
 	/* font-family: "Skranji", cursive; */
 	/* font-family: "Staatliches", cursive;  */
 }
-

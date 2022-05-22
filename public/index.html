@@ -60,12 +60,16 @@
 				<i
 					id="seta_esquerda"
 					onclick="mudarManchete('esquerda')"
-					class="fa-solid fa-angle-left"
+					onmouseenter="tirarAnimação()"
+					onmouseleave="colocarAnimação()"
+					class="setas fa-solid fa-angle-left"
 				></i>
 				<i
 					id="seta_direita"
 					onclick="mudarManchete('direita')"
-					class="fa-solid fa-angle-right"
+					onmouseenter="tirarAnimação()"
+					onmouseleave="colocarAnimação()"
+					class="setas fa-solid fa-angle-right"
 				></i>
 			</section>
 
@@ -75,10 +79,26 @@
 			</section>
 
 			<section class="pag-carrossel-container">
-				<span class="carrossel-circles" id="carrossel1"></span>
-				<span class="carrossel-circles" id="carrossel2"></span>
-				<span class="carrossel-circles" id="carrossel3"></span>
-				<span class="carrossel-circles" id="carrossel4"></span>
+				<span
+					class="carrossel-circles"
+					onclick="mudarManchete(0)"
+					id="carrossel1"
+				></span>
+				<span
+					class="carrossel-circles"
+					onclick="mudarManchete(1)"
+					id="carrossel2"
+				></span>
+				<span
+					class="carrossel-circles"
+					onclick="mudarManchete(2)"
+					id="carrossel3"
+				></span>
+				<span
+					class="carrossel-circles"
+					onclick="mudarManchete(3)"
+					id="carrossel4"
+				></span>
 			</section>
 		</article>
 
@@ -176,52 +196,4 @@
 		</footer>
 	</body>
 </html>
-<script>
-	var counter = 0;
-	function mudarManchete(lado) {
-		var manchetes = {
-			0: {
-				img: "https://3.bp.blogspot.com/-Id-gwzZmLUI/YTEZrRaRFAI/AAAAAAAAKVE/HhCdtZnkwH45gzvfjZcRScWuhBpZyHoiACPcBGAsYHg/w919/kamui-woods-mha-1-4k-uhdpaper.com-973.0_b-thumbnail.jpg",
-				titulo: "Assalto de vilões a loja de conveniência",
-				descricao:
-					"O famoso herói Kamui Woods salva o dia mais uma vez. Em um dia de patrulha comum ele encontra vilões assaltando uma loja de conveniências e rapidamente consegue detê-los com sua habilidade de transformar seus braços em raízes de árvore, prendendo-os.",
-			},
-			1: {
-				img: "https://static1.cbrimages.com/wordpress/wp-content/uploads/2020/10/My-Hero-Academia-Edgeshot-Attacked.jpg?q=50&fit=crop&w=1920&dpr=1.5",
-				titulo: "Ataque a base dos vilões",
-				descricao:
-					"O herói número 4, Edgeshot fez um ataque surpresa à base do grupo de vilões conhecida como Black Hand. O herói informou ao noticiário que através de uma investigação conjunta com a polícia, descobriu o paradeiro de um dos membros do grupo que ficava próximo a uma famosa rua de Nakano.",
-			},
-			2: {
-				img: "https://static1.cbrimages.com/wordpress/wp-content/uploads/2021/08/Snipe-Holding-His-Pistol-At-USJ.jpg?q=50&fit=crop&w=1914&dpr=1.5",
-				titulo: "Assalto de vilões a loja de conveniência",
-				descricao:
-					"O famoso herói Kamui Woods salva o dia mais uma vez. Em um dia de patrulha comum ele encontra vilões assaltando uma loja de conveniências e rapidamente consegue detê-los com sua habilidade de transformar seus braços em raízes de árvore, prendendo-os.",
-			},
-			3: {
-				img: "https://wallpapercave.com/uwp/uwp1615623.jpeg",
-				titulo: "Assalto de vilões a loja de conveniência",
-				descricao:
-					"O famoso herói Kamui Woods salva o dia mais uma vez. Em um dia de patrulha comum ele encontra vilões assaltando uma loja de conveniências e rapidamente consegue detê-los com sua habilidade de transformar seus braços em raízes de árvore, prendendo-os.",
-			},
-		};
-
-		if (lado == "esquerda" && counter > 0) {
-			counter--;
-		} else if (lado == "direita" && counter < 3) {
-			counter++;
-		}
-
-		for (let i = 0; i < 4; i++) {
-			document.querySelectorAll(".carrossel-circles")[i].style.backgroundColor =
-				"";
-		}
-
-		manchete_img.src = manchetes[counter].img;
-		titulo_manchete.innerHTML = manchetes[counter].titulo;
-		descricao_manchete.innerHTML = manchetes[counter].descricao;
-		document.querySelectorAll(".carrossel-circles")[
-			counter
-		].style.backgroundColor = "#31d9a5";
-	}
-</script>
+<script src="js/index.js"></script>
