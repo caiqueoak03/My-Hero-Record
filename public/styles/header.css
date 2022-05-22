@@ -1,0 +1,94 @@
+/* SETUP */
+
+* {
+	/* Boku no Hero Pallete */
+	--rosa: #ff749e;
+	--azul-escuro: #1a2865;
+	--verde-claro: #31d9a5;
+	--laranja: #ff7e00;
+	--roxo: #610a97;
+
+	/* all might pallete */
+	--amarelo: #ebde0d;
+	--azul-escuro2: #0a0487;
+	--vermelho: #ff3333;
+	--cor-pele: #f4cc90;
+
+	/* outras cores */
+	--grey: rgba(182, 180, 180, 0.5);
+
+	/* RESETS */
+	margin: 0;
+	padding: 0;
+	/* font-family: "Bangers", cursive; */
+	/* font-family: "Black Ops One", cursive; */
+	/* font-family: "Bungee Inline", cursive; */
+	/* font-family: "Fredoka", sans-serif; */
+	/* font-family: "Luckiest Guy", cursive; */
+	/* font-family: "Monoton", cursive; */
+	/* font-family: "Sigmar One", cursive; */
+	/* font-family: "Skranji", cursive; */
+	font-family: "Staatliches", cursive;
+}
+
+a {
+	color: #000;
+	text-decoration: none;
+}
+
+li {
+	list-style-type: none;
+}
+
+/* HEADER */
+
+.header {
+	position: sticky;
+	top: 0;
+	height: 120h;
+	font-size: 1.3rem;
+	background-color: #ebde0d;
+	border-bottom: 3px solid #31d9a5;
+	display: flex;
+	align-items: center;
+	justify-content: space-evenly;
+	z-index: 999;
+	font-family: "Bangers", cursive;
+}
+
+/* logo */
+
+.logo-container {
+	display: flex;
+	align-items: center;
+	column-gap: 10px;
+}
+
+.logo-container img {
+	height: 70px;
+}
+
+.logo-container p {
+	font-size: 1.8rem;
+	color: #1a2865;
+	text-shadow: 3px 3px #31d9a5;
+	font-family: "Black Ops One", cursive;
+}
+
+/* navbar */
+
+.navbar-container ul {
+	display: flex;
+	column-gap: 50px;
+}
+
+.header a:hover {
+	text-decoration: underline;
+}
+
+/* cadastro */
+
+.cadastro-container ul {
+	display: flex;
+	column-gap: 20px;
+}

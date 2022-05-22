@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>My Hero Record</title>
+		<link rel="stylesheet" href="styles/header.css" />
+		<link rel="stylesheet" href="styles/index.css" />
+		<link rel="icon" href="images/logo-site.jpg" type="image/x-icon" />
+		<script
+			src="https://kit.fontawesome.com/8c4cdd8d42.js"
+			crossorigin="anonymous"
+		></script>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Bangers&family=Black+Ops+One&family=Bungee+Inline&family=Fredoka:wght@300;400&family=Luckiest+Guy&family=Monoton&family=Sigmar+One&family=Skranji:wght@400;700&family=Staatliches&display=swap"
+			rel="stylesheet"
+		/>
+	</head>
+	<body>
+		<!-- HEADER -->
+		<header class="header">
+			<!-- logo -->
+			<section class="logo-container">
+				<img src="images/logo.png" alt="" />
+				<p>My Hero Record</p>
+			</section>
+
+			<!-- navbar -->
+			<nav class="navbar-container">
+				<ul class="navbar-list">
+					<li><a href="index.html">Notícias</a></li>
+					<li><a href="pages/sobre.html">Sobre</a></li>
+					<li><a href="pages/contato.html">Contato</a></li>
+					<li><a href="pages/herois.html">Heróis</a></li>
+				</ul>
+			</nav>
+
+			<!-- cadastro -->
+			<section class="cadastro-container">
+				<ul class="cadastro-list">
+					<li id="cadastro"><a href="pages/cadastro.html">Cadastrar-se</a></li>
+					<li id="login"><a href="pages/login.html">Entrar</a></li>
+				</ul>
+			</section>
+		</header>
+
+		<!-- MANCHETE -->
+		<article id="manchete_container">
+			<h2 class="manchete-title">Destaques da Semana</h2>
+			<img
+				id="manchete_img"
+				src="https://3.bp.blogspot.com/-Id-gwzZmLUI/YTEZrRaRFAI/AAAAAAAAKVE/HhCdtZnkwH45gzvfjZcRScWuhBpZyHoiACPcBGAsYHg/w919/kamui-woods-mha-1-4k-uhdpaper.com-973.0_b-thumbnail.jpg"
+				alt=""
+			/>
+			<section class="setas-container">
+				<i id="seta_esquerda" class="fa-solid fa-angle-left"></i>
+				<i id="seta_direita" class="fa-solid fa-angle-right"></i>
+			</section>
+
+			<section class="texto-container">
+				<h2 id="titulo_manchete">Assalto de vilões a loja de conveniência</h2>
+				<p id="descricao_manchete">
+					O famoso herói Kamui Woods salva o dia mais uma vez. Em um dia de
+					patrulha comum ele encontra vilões assaltando uma loja de
+					conveniências e rapidamente consegue detê-los com sua habilidade de
+					transformar seus braços em raízes de árvore, prendendo-os.
+				</p>
+			</section>
+
+			<section class="pag-carrossel-container">
+				<span class="carrossel-circles" id="carrossel1"></span>
+				<span class="carrossel-circles" id="carrossel2"></span>
+				<span class="carrossel-circles" id="carrossel3"></span>
+				<span class="carrossel-circles" id="carrossel4"></span>
+			</section>
+		</article>
+
+		<!-- REGISTROS -->
+		<article class="registros-container">
+			<h3 class="registros-title">Últimas Notícias!</h3>
+			<section class="registros-items">
+				<img
+					src="https://s3.us-east-1.amazonaws.com/dexerto-assets-production-cbbdf288/uploads/2020/05/23213020/my-hero-academia-mt-lady-cosplayer-steps-on-enemies-logo.png"
+					alt=""
+				/>
+				<div class="registros-text-container">
+					<h1>Mt. Lady derrota vilão na linha de trem</h1>
+					<p>
+						A heroína Mt. Lady que tem a individualidade de aumentar seu tamanho em até 50 vezes derrotou um vilão na linha de trem que liga as cidades de Nakano e Tsushima. O vilão estava impedindo a circulação dos trens através de sua individualidade de crescer, até que a heroína chegou golpeando-o quando estava distraído pelo herói Kamui Woods.
+					</p>
+				</div>
+			</section>
+
+			<section class="registros-items">
+				<div class="registros-text-container">
+					<h1>Titulo 1</h1>
+					<p>
+						Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit ut modi
+						qui aspernatur porro quae dolor, obcaecati corporis, facere
+						perspiciatis neque ea blanditiis maiores eos placeat harum optio
+						sapiente quo!
+					</p>
+				</div>
+				<img
+					src="https://i.pinimg.com/originals/02/57/88/02578845a9f80d1315f117eb36f1c691.jpg"
+					alt=""
+				/>
+			</section>
+
+			<section class="registros-items">
+				<img src="https://wallpapercave.com/wp/wp8293568.png" alt="" />
+				<div class="registros-text-container">
+					<h1>Titulo 1</h1>
+					<p>
+						Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit ut modi
+						qui aspernatur porro quae dolor, obcaecati corporis, facere
+						perspiciatis neque ea blanditiis maiores eos placeat harum optio
+						sapiente quo!
+					</p>
+				</div>
+			</section>
+		</article>
+
+		<!-- CONTATO -->
+		<article class="contato-container">
+			<section class="contato-card-container">
+				<h2>Nos mande um email!</h2>
+				<p>Preencha todos os campos</p>
+				<form class="inputs-container">
+					<label for="">Nome:</label>
+					<input type="text" id="nome" />
+					<label for="">Email:</label>
+					<input type="email" id="email" />
+					<label for="">Assunto:</label>
+					<input type="text" id="assunto" />
+					<label for="">Mensagem:</label>
+					<input type="text" id="Mensagem" />
+
+					<button onclick="validar()"></button>
+				</form>
+				<img src="" alt="" id="contato-img" />
+			</section>
+		</article>
+
+		<!-- FOOTER -->
+		<footer>
+			<article class="footer-article1">
+				<section class="footer-logo-container">
+					<img src="" alt="" />
+					<p>My Hero Record</p>
+				</section>
+
+				<section class="footer-sections">
+					<ul>
+						<li>Patrocinadores</li>
+						<li>Centro de apoio</li>
+						<li>Trabalhe conosco</li>
+					</ul>
+				</section>
+
+				<section class="footer-sections">
+					<ul>
+						<li>Plataforma</li>
+						<li>Segurança</li>
+						<li>Declarações</li>
+					</ul>
+				</section>
+
+				<section class="footer-sections">
+					<ul>
+						<li>Clientes</li>
+						<li>Sobre</li>
+						<li>Empresa</li>
+					</ul>
+				</section>
+			</article>
+			<article class="footer-article2">
+				<p>&copy; My Hero Record, Inc.</p>
+				<section class="redes-sociais">
+					<p>myhero@record.com</p>
+					<i class="fa-brands fa-twitter"></i>
+					<i class="fa-brands fa-instagram"></i>
+				</section>
+			</article>
+		</footer>
+	</body>
+</html>

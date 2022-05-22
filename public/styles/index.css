@@ -1,0 +1,174 @@
+* {
+	/* font-family: "Bangers", cursive;
+	font-family: "Black Ops One", cursive;
+	font-family: "Bungee Inline", cursive;
+	font-family: "Fredoka", sans-serif;
+	font-family: "Luckiest Guy", cursive;
+	font-family: "Monoton", cursive;
+	font-family: "Sigmar One", cursive;
+	font-family: "Skranji", cursive;
+	font-family: "Staatliches", cursive; */
+}
+
+/* MANCHETE */
+
+#manchete_container {
+	height: 88vh;
+	display: flex;
+	align-items: flex-end;
+	background-color: #1a2865;
+}
+
+.manchete-title {
+	position: absolute;
+	margin-left: 17vw;
+	margin-top: 20px;
+	z-index: 2;
+	color: #ebde0d;
+	align-self: flex-start;
+	background-color: #000;
+	border-radius: 10px;
+	padding: 7px;
+	font-family: "Bangers", cursive;
+	font-size: 2rem;
+}
+
+#manchete_img {
+	align-self: center;
+	position: absolute;
+	z-index: 0;
+	left: 50%;
+	transform: translate(-50%, -10px);
+	border-radius: 10px;
+	height: 83vh;
+}
+
+.setas-container {
+	width: 90vw;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	display: flex;
+	justify-content: space-between;
+	z-index: 1;
+}
+
+.setas-container i {
+	color: #31d9a5;
+	font-size: 2rem;
+	border-radius: 50%;
+	width: 40px;
+	height: 40px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+}
+.setas-container i:hover {
+	box-shadow: 0 0 5px 0px black;
+}
+
+.texto-container {
+	width: 30%;
+	margin-left: 120px;
+	z-index: 1;
+	color: white;
+	background-color: rgba(0, 0, 0, 0.8);
+	border-radius: 10px;
+	margin-bottom: 40px;
+	padding: 20px;
+	box-shadow: -1px 1px 2px 0 black;
+	font-family: "Fredoka", sans-serif;
+}
+
+#titulo_manchete {
+	font-family: "Fredoka", sans-serif;
+	text-align: center;
+	font-size: 1.5rem;
+	padding-bottom: 10px;
+}
+
+#descricao_manchete {
+	line-height: 20px;
+	font-size: 1.2rem;
+	text-align: justify;
+}
+
+.pag-carrossel-container {
+	position: absolute;
+	left: 50%;
+	transform: translate(-50%, -7px);
+	display: flex;
+	column-gap: 10px;
+}
+
+.carrossel-circles {
+	border-radius: 50%;
+	height: 10px;
+	width: 10px;
+	border: 2px solid #000;
+	cursor: pointer;
+}
+
+.carrossel-circles:first-child {
+	background-color: #31d9a5;
+}
+
+/* REGISTROS */
+
+.registros-container {
+	display: flex;
+	flex-direction: column;
+	background-color: #212124;
+	color: #eee;
+}
+
+.registros-title {
+	margin: 40px auto 60px;
+	font-size: 3rem;
+	text-decoration: underline;
+	font-family: "Staatliches", cursive;
+}
+
+.registros-items {
+	display: flex;
+	justify-content: center;
+	column-gap: 50px;
+	height: 50vh;
+	margin-bottom: 100px;
+	text-align: justify;
+}
+
+.registros-items img {
+	height: 100%;
+	width: 40vw;
+	border-radius: 10px;
+	border: 3px solid #31d9a5;
+	align-self: center;
+}
+
+.registros-text-container {
+	width: 30vw;
+	padding-top: 20px;
+}
+
+.registros-text-container h1 {
+	padding-bottom: 20px;
+	font-size: 1.8rem;
+	font-family: "Fredoka", sans-serif;
+	text-align: center;
+}
+
+.registros-text-container p {
+	font-size: 1.2rem;
+	/* font-family: "Bangers", cursive; */
+	/* font-family: "Black Ops One", cursive; */
+	font-family: "Bungee Inline", cursive;
+	font-family: "Fredoka", sans-serif;
+	/* font-family: "Luckiest Guy", cursive; */
+	/* font-family: "Monoton", cursive; */
+	/* font-family: "Sigmar One", cursive; */
+	/* font-family: "Skranji", cursive; */
+	/* font-family: "Staatliches", cursive;  */
+}
