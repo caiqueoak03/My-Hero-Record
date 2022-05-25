@@ -82,7 +82,7 @@ li {
 	column-gap: 50px;
 }
 
-.header a:hover {
+.header li a:hover {
 	text-decoration: underline;
 }
 
