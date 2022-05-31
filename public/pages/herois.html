@@ -1,96 +1,126 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>My Hero Record</title>
-		<link rel="stylesheet" href="../styles/header.css" />
-		<link rel="stylesheet" href="../styles/footer.css" />
-		<link rel="stylesheet" href="../styles/herois.css" />
-		<link rel="icon" href="../images/logo-site.jpg" type="image/x-icon" />
-		<script
-			src="https://kit.fontawesome.com/8c4cdd8d42.js"
-			crossorigin="anonymous"
-		></script>
-		<link rel="preconnect" href="https://fonts.googleapis.com" />
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-		<link
-			href="https://fonts.googleapis.com/css2?family=Bangers&family=Black+Ops+One&family=Bungee+Inline&family=Fredoka:wght@300;400&family=Luckiest+Guy&family=Monoton&family=Sigmar+One&family=Skranji:wght@400;700&family=Staatliches&display=swap"
-			rel="stylesheet"
-		/>
-	</head>
-	<body>
-		<!-- HEADER -->
-		<header class="header">
-			<!-- logo -->
-			<a href="../index.html" class="logo-container">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>My Hero Record</title>
+	<link rel="stylesheet" href="../styles/header.css" />
+	<link rel="stylesheet" href="../styles/footer.css" />
+	<link rel="stylesheet" href="../styles/herois.css" />
+	<link rel="icon" href="../images/logo-site.jpg" type="image/x-icon" />
+	<script src="https://kit.fontawesome.com/8c4cdd8d42.js" crossorigin="anonymous"></script>
+	<link rel="preconnect" href="https://fonts.googleapis.com" />
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+	<link
+		href="https://fonts.googleapis.com/css2?family=Bangers&family=Black+Ops+One&family=Bungee+Inline&family=Fredoka:wght@300;400&family=Luckiest+Guy&family=Monoton&family=Sigmar+One&family=Skranji:wght@400;700&family=Staatliches&display=swap"
+		rel="stylesheet" />
+</head>
+
+<body>
+	<!-- HEADER -->
+	<header class="header">
+		<!-- logo -->
+		<a href="../index.html" class="logo-container">
+			<img src="../images/logo.png" alt="" />
+			<p>My Hero Record</p>
+		</a>
+
+		<!-- navbar -->
+		<nav class="navbar-container">
+			<ul class="navbar-list">
+				<li><a href="../index.html">Notícias</a></li>
+				<li><a href="sobre.html">Sobre</a></li>
+				<li><a href="contato.html">Contato</a></li>
+				<li><a href="herois.html">Heróis</a></li>
+			</ul>
+		</nav>
+
+		<!-- cadastro -->
+		<section class="cadastro-container">
+			<ul class="cadastro-list">
+				<li id="cadastro"><a href="cadastro.html">Cadastrar-se</a></li>
+				<li id="login"><a href="login.html">Entrar</a></li>
+			</ul>
+		</section>
+	</header>
+
+	<!-- MAIN -->
+	<main>
+		<nav class="navbar">
+			<input onchange="pesquisar()" type="text" id="in_heroName">
+		</nav>
+		<article id="heroes">
+		</article>
+	</main>
+
+	<!-- FOOTER -->
+	<footer>
+		<article class="footer-article1">
+			<section class="footer-logo-container">
 				<img src="../images/logo.png" alt="" />
 				<p>My Hero Record</p>
-			</a>
+			</section>
 
-			<!-- navbar -->
-			<nav class="navbar-container">
-				<ul class="navbar-list">
-					<li><a href="../index.html">Notícias</a></li>
-					<li><a href="sobre.html">Sobre</a></li>
-					<li><a href="contato.html">Contato</a></li>
-					<li><a href="herois.html">Heróis</a></li>
-				</ul>
-			</nav>
-
-			<!-- cadastro -->
-			<section class="cadastro-container">
-				<ul class="cadastro-list">
-					<li id="cadastro"><a href="cadastro.html">Cadastrar-se</a></li>
-					<li id="login"><a href="login.html">Entrar</a></li>
+			<section class="footer-sections">
+				<ul>
+					<li>Patrocinadores</li>
+					<li>Centro de apoio</li>
+					<li>Trabalhe conosco</li>
 				</ul>
 			</section>
-		</header>
 
-		<!-- MAIN -->
-		<main></main>
+			<section class="footer-sections">
+				<ul>
+					<li>Plataforma</li>
+					<li>Segurança</li>
+					<li>Declarações</li>
+				</ul>
+			</section>
 
-		<!-- FOOTER -->
-		<footer>
-			<article class="footer-article1">
-				<section class="footer-logo-container">
-					<img src="../images/logo.png" alt="" />
-					<p>My Hero Record</p>
-				</section>
+			<section class="footer-sections">
+				<ul>
+					<li>Clientes</li>
+					<li>Sobre</li>
+					<li>Empresa</li>
+				</ul>
+			</section>
+		</article>
+		<article class="footer-article2">
+			<p>&copy; My Hero Record, Inc.</p>
+			<section class="redes-sociais">
+				<p>myhero@record.com</p>
+				<i class="fa-brands fa-twitter"></i>
+				<i class="fa-brands fa-instagram"></i>
+			</section>
+		</article>
+	</footer>
+</body>
 
-				<section class="footer-sections">
-					<ul>
-						<li>Patrocinadores</li>
-						<li>Centro de apoio</li>
-						<li>Trabalhe conosco</li>
-					</ul>
-				</section>
-
-				<section class="footer-sections">
-					<ul>
-						<li>Plataforma</li>
-						<li>Segurança</li>
-						<li>Declarações</li>
-					</ul>
-				</section>
-
-				<section class="footer-sections">
-					<ul>
-						<li>Clientes</li>
-						<li>Sobre</li>
-						<li>Empresa</li>
-					</ul>
-				</section>
-			</article>
-			<article class="footer-article2">
-				<p>&copy; My Hero Record, Inc.</p>
-				<section class="redes-sociais">
-					<p>myhero@record.com</p>
-					<i class="fa-brands fa-twitter"></i>
-					<i class="fa-brands fa-instagram"></i>
-				</section>
-			</article>
-		</footer>
-	</body>
 </html>
+<script>
+	for (let i = 0; i < 22; i++) {
+
+		document.querySelector('#heroes').innerHTML += `
+		<section class="hero-card">
+			<p id="hero_name" class="hero_name">
+			<span>${i+1}</span>	<span>Death Arms</span></p>
+			<img src="../images/death_arms.webp" alt="" class="hero-img" id="hero_img">
+			<div class="bottom-card-container">
+				<div class="select-container">
+					<select name="" id="in_nota">
+						<option value="1">1</option>
+						<option value="2">2</option>
+						<option value="3">3</option>
+						<option value="4">4</option>
+						<option value="5">5</option>
+					</select>
+					<button id='avaliar-btn'>Avaliar</button>
+				</div>
+				<p id='nota'>Nota: 10</p>
+			</div>
+		</section>
+		`
+	}
+</script>
