@@ -1,94 +1,110 @@
 main {
-    display: flex;
-    flex-direction: row-reverse;
-    height: 88vh;
+	display: flex;
+	flex-direction: row-reverse;
+	height: 88vh;
 }
 
 .navbar {
-    display: flex;
-    justify-content: center;
-    box-sizing: border-box;
-    padding-top: 20px;
-    width: 30%;
-    background-color: #212121;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	color: #fff;
+	box-sizing: border-box;
+	padding-top: 20px;
+	width: 25%;
+	background-color: #212121;
+}
+
+.navbar p:first-child {
+	font-size: 1.2rem;
+}
+
+.navbar label {
+	margin-top: 20px;
+}
+
+.navbar select {
+	width: 100px;
+	height: 30px;
+	text-align: center;
 }
 
 #in_heroName {
-    width: 80%;
-    height: 30px;
+	width: 80%;
+	height: 25px;
+	text-align: center;
 }
 
 #heroes {
-    overflow-y: auto;
-    width: 70%;
-    padding: 50px;
-    padding-right: 20px;
-    display: flex;
-    flex-flow: row wrap;
-    box-sizing: border-box;
-    row-gap: 20px;
-    column-gap: 20px;
-    background-color: #1a2865;
+	overflow-y: auto;
+	width: 75%;
+	padding: 50px;
+	padding-right: 20px;
+	display: flex;
+	flex-flow: row wrap;
+	box-sizing: border-box;
+	row-gap: 20px;
+	column-gap: 20px;
+	background-color: #1a2865;
 }
 
 .hero-card {
-    border: 1px solid black;
-    border-radius: 10px;
-    width: 22%;
-    height: 75%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background-color: #fff;
-    box-shadow: 0 0 5px -1px black;
+	border: 1px solid black;
+	border-radius: 10px;
+	width: 22%;
+	height: 75%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	background-color: #fff;
+	box-shadow: 0 0 5px -1px black;
 }
 
 .hero_name {
-    text-align: center;
-    border-bottom: 1px solid black;
-    width: 100%;
-    height: 10%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
+	text-align: center;
+	border-bottom: 1px solid black;
+	width: 100%;
+	height: 10%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: relative;
 }
 
 .hero_name span:first-of-type {
-    position: absolute;
-    left: 10px;
-    border: 1px solid black;
-    border-radius: 50%;
-    width: 20px;
-    height: 20px;
+	position: absolute;
+	left: 10px;
+	border: 1px solid black;
+	border-radius: 50%;
+	width: 20px;
+	height: 20px;
 }
 
 .hero-img {
-    height: 70%;
+	height: 70%;
 }
 
 .bottom-card-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-evenly;
-    width: 100%;
-    height: 20%;
-    border-top: 1px solid #000;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-evenly;
+	width: 100%;
+	height: 20%;
+	border-top: 1px solid #000;
 }
 
 .select-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    column-gap: 10px;
-    width: 100%;
-    padding: 7px 0 10px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	column-gap: 10px;
+	width: 100%;
+	padding: 7px 0 10px;
 }
 
 #in_nota {
-    width: 50px;
-    text-align: center;
+	width: 50px;
+	text-align: center;
 }
-
