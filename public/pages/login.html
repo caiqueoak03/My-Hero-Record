@@ -7,7 +7,7 @@
     <title>My Hero Record</title>
     <link rel="stylesheet" href="../styles/header.css" />
     <link rel="stylesheet" href="../styles/footer.css" />
-    <link rel="stylesheet" href="../styles/herois.css" />
+    <link rel="stylesheet" href="../styles/login.css" />
     <link rel="icon" href="../images/logo-site.jpg" type="image/x-icon" />
     <script
       src="https://kit.fontawesome.com/8c4cdd8d42.js"
@@ -20,7 +20,6 @@
       rel="stylesheet"
     />
   </head>
-
   <body>
     <!-- HEADER -->
     <header class="header">
@@ -51,47 +50,20 @@
 
     <!-- MAIN -->
     <main>
-      <nav class="navbar">
-        <p>Avalie seu herói!</p>
-        <ul class="navbar-items-container">
+      <form action="">
+        <h1>Login</h1>
+        <ul>
           <li>
-            <label for="in_heroName">Nome de herói:</label>
-            <input onchange="pesquisar()" type="text" id="in_heroName" />
+            <label for="">email:</label>
+            <input type="text" id="in_email" />
           </li>
           <li>
-            <label for="ranking_in">Número no ranking:</label>
-            <input type="number" id="in_ranking" />
+            <label for="">senha:</label>
+            <input type="text" id="in_senha" />
           </li>
-          <li>
-            <label for="select_nota_pesquisa">Nota:</label>
-            <select name="select_nota_pesquisa" id="select_nota_pesquisa">
-              <option value="0_2">Entre 0 e 2</option>
-              <option value="2_4">Entre 2 e 4</option>
-              <option value="4_6">Entre 4 e 6</option>
-              <option value="6_8">Entre 6 e 8</option>
-              <option value="8_10">Entre 8 e 10</option>
-            </select>
-          </li>
-          <li>
-            <label for="">Ordenar por:</label>
-            <span class="selects">
-              <select name="" id="ordem_item">
-                <option value="nome">nome</option>
-                <option value="ranking">ranking</option>
-              </select>
-              <select name="" id="tipo_ordem">
-                <option value="decrescente">Decrescente</option>
-                <option value="crescente">Crescente</option>
-              </select>
-            </span>
-          </li>
-          <button onclick="pesquisar()">Pesquisar</button>
         </ul>
-      </nav>
-      <article class="heroes_container">
-        <h1>Ranking de Heróis</h1>
-        <section id="heroes_cards_container"></section>
-      </article>
+        <button onclick="login()">Entrar</button>
+      </form>
     </main>
 
     <!-- FOOTER -->
@@ -138,26 +110,11 @@
   </body>
 </html>
 <script>
-  for (let i = 0; i < 22; i++) {
-    document.querySelector("#heroes_cards_container").innerHTML += `
-		<section class="hero-card">
-			<p id="hero_name" class="hero_name">
-			<span>${i + 1}</span>	<span>Death Arms</span></p>
-			<img src="../images/death_arms.webp" alt="" class="hero-img" id="hero_img">
-			<div class="bottom-card-container">
-				<div class="select-container">
-					<select name="" id="in_nota">
-						<option value="1">1</option>
-						<option value="2">2</option>
-						<option value="3">3</option>
-						<option value="4">4</option>
-						<option value="5">5</option>
-					</select>
-					<button id='avaliar-btn'>Avaliar</button>
-				</div>
-				<p id='nota'>Nota: 10</p>
-			</div>
-		</section>
-		`;
+  function verificarPerfil() {
+    if (perfil_select.value == "heroi") {
+      cadastro_heroi.style.display = "flex";
+    } else {
+      cadastro_heroi.style.display = "none";
+    }
   }
 </script>
