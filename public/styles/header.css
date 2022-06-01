@@ -92,3 +92,14 @@ li {
 	display: flex;
 	column-gap: 20px;
 }
+
+.perfil_containter {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+.perfil_containter img {
+	height: 40px;
+}
