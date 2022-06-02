@@ -40,6 +40,22 @@ li {
 	list-style-type: none;
 }
 
+/* Wrapper de loading */
+
+#wrapperLoading {
+	height: 100vh;
+	width: 100%;
+	top: 0;
+	left: 0;
+	background-color: #212121;
+	z-index: 9999;
+	position: absolute;
+}
+
+body {
+	overflow: hidden;
+}
+
 /* HEADER */
 
 .header {
@@ -48,7 +64,7 @@ li {
 	height: 120h;
 	font-size: 1.3rem;
 	background-color: #ebde0d;
-	border-bottom: 2px solid #ff3333;
+	border-bottom: 3px solid #ff3333;
 	display: flex;
 	align-items: center;
 	justify-content: space-evenly;
@@ -93,13 +109,110 @@ li {
 	column-gap: 20px;
 }
 
-.perfil_containter {
+/* Perfil */
+
+#perfil_containter {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
+	margin-right: 150px;
+	position: relative;
 }
 
-.perfil_containter img {
+#perfil_containter img {
 	height: 40px;
+	cursor: pointer;
+}
+
+#nomeUser {
+	position: absolute;
+	left: 50px;
+	width: 200px;
+}
+
+#dropdown {
+	top: 7.5vh;
+	position: absolute;
+	height: 0;
+	width: 100px;
+	background-color: #3f3f3f;
+	border-radius: 10px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-evenly;
+	transition: all 0.3s;
+	overflow: hidden;
+	font-size: 0;
+}
+
+.triangulo {
+	position: absolute;
+	background-color: transparent;
+	top: -7px;
+	width: 2px;
+	height: 2px;
+	border-left: 5px solid transparent;
+	border-right: 5px solid transparent;
+	border-bottom: 5px solid #3f3f3f;
+}
+
+#dropdown li {
+	color: #fff;
+	cursor: pointer;
+}
+
+#dropdown a {
+	color: #fff;
+}
+
+#dropdown li:hover {
+	text-decoration: underline;
+}
+
+/* WRAPPER */
+
+#wrapper {
+	display: none;
+	align-items: center;
+	justify-content: center;
+	position: absolute;
+	height: 100vh;
+	width: 100%;
+	left: 0;
+	top: 0;
+	background-color: #21212155;
+	z-index: 9999;
+}
+
+.options-container {
+	display: flex;
+	align-items: center;
+	justify-content: space-evenly;
+	flex-direction: column;
+	background-color: #212121;
+	border-radius: 10px;
+	border: 1px solid #000;
+	width: 250px;
+	height: 200px;
+	color: #fff;
+}
+
+.options-container h3 {
+	font-size: 1.8rem;
+}
+
+.options-container section {
+	display: flex;
+	justify-content: center;
+	column-gap: 20px;
+	font-size: 1.5rem;
+}
+
+.options-container p {
+	background-color: #000;
+	padding: 10px;
+	border-radius: 10px;
+	cursor: pointer;
 }

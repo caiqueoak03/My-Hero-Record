@@ -20,7 +20,19 @@
 			rel="stylesheet"
 		/>
 	</head>
-	<body>
+	<body onload="carregarNav()">
+		<!-- Wrapper de loading -->
+		<div id="wrapperLoading"></div>
+		<!-- WRAPPER -->
+		<article id="wrapper">
+			<div class="options-container">
+				<h3>Deseja sair?</h3>
+				<section>
+					<p onclick="deslogar()">Sim</p>
+					<p onclick="mostrarWrapper()">Não</p>
+				</section>
+			</div>
+		</article>
 		<!-- HEADER -->
 		<header class="header">
 			<!-- logo -->
@@ -45,6 +57,21 @@
 					<li id="cadastro"><a href="cadastro.html">Cadastrar-se</a></li>
 					<li id="login"><a href="login.html">Entrar</a></li>
 				</ul>
+
+				<!-- perfil -->
+				<div id="perfil_containter">
+					<img
+						onclick="mostrarDropDown()"
+						src="http://cdn.onlinewebfonts.com/svg/img_24787.png"
+						alt=""
+					/>
+					<div id="nomeUser">Olá, All Might!</div>
+					<ul id="dropdown">
+						<div class="triangulo"></div>
+						<li><a href="pages/perfil.html">Perfil</a></li>
+						<li onclick="mostrarWrapper()">Sair</li>
+					</ul>
+				</div>
 			</section>
 		</header>
 
@@ -144,3 +171,4 @@
 		</footer>
 	</body>
 </html>
+<script src="../js/header.js"></script>

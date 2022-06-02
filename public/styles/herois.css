@@ -45,15 +45,19 @@ main {
 	margin-top: 30px;
 	width: 120px;
 	height: 40px;
-	transition: .3s all;
+	transition: 0.3s all;
+	font-size: 1.2rem;
 }
 
 .navbar-items-container li {
 	display: flex;
-	align-items: center;
+	align-items: flex-start;
 	flex-direction: column;
-	justify-content: space-between;
 	width: 100%;
+}
+
+.navbar-items-container li:first-of-type {
+	align-items: center;
 }
 
 .navbar-items-container li label {
@@ -62,19 +66,34 @@ main {
 
 .navbar-items-container input {
 	text-align: center;
+	width: 100px;
+}
+
+.navbar-items-container select {
+	width: 104px;
+	height: 25px;
 }
 
 .navbar-items-container li:first-child input {
 	width: 100%;
 }
 
-.navbar-items-container li:nth-child(2) input {
-	width: 20%;
-}
-
 #in_heroName {
 	height: 25px;
 	text-align: center;
+}
+
+.selects {
+	display: flex;
+	column-gap: 5px;
+}
+
+.selects select {
+	width: 100px;
+}
+
+#in_ranking {
+	height: 21px;
 }
 
 /* HEROES CONTAINER */

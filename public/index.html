@@ -20,7 +20,19 @@
 			rel="stylesheet"
 		/>
 	</head>
-	<body onload="mudarManchete()">
+	<body onload="mudarManchete(), carregarNav()">
+		<!-- Wrapper de loading -->
+		<div id="wrapperLoading"></div>
+		<!-- WRAPPER -->
+		<article id="wrapper">
+			<div class="options-container">
+				<h3>Deseja sair?</h3>
+				<section>
+					<p onclick="deslogar('index')">Sim</p>
+					<p onclick="mostrarWrapper()">Não</p>
+				</section>
+			</div>
+		</article>
 		<!-- HEADER -->
 		<header class="header">
 			<!-- logo -->
@@ -41,14 +53,24 @@
 
 			<!-- cadastro -->
 			<section class="cadastro-container">
-				<ul style="display: none;" class="cadastro-list">
+				<ul class="cadastro-list">
 					<li id="cadastro"><a href="pages/cadastro.html">Cadastrar-se</a></li>
 					<li id="login"><a href="pages/login.html">Entrar</a></li>
 				</ul>
 
-				<div class="perfil_containter">
-					<img src="http://cdn.onlinewebfonts.com/svg/img_24787.png" alt="">
-					<div></div>
+				<!-- perfil -->
+				<div id="perfil_containter">
+					<img
+						onclick="mostrarDropDown()"
+						src="http://cdn.onlinewebfonts.com/svg/img_24787.png"
+						alt=""
+					/>
+					<div id="nomeUser">Olá, All Might!</div>
+					<ul id="dropdown">
+						<div class="triangulo"></div>
+						<li><a href="pages/perfil.html">Perfil</a></li>
+						<li onclick="mostrarWrapper()">Sair</li>
+					</ul>
 				</div>
 			</section>
 		</header>
@@ -205,3 +227,4 @@
 	</body>
 </html>
 <script src="js/index.js"></script>
+<script src="js/header.js"></script>
