@@ -21,7 +21,7 @@
 		/>
 	</head>
 
-	<body onload="carregarNav()">
+	<body onload="carregarNav(), listarIdsUsuarios()">
 		<!-- Wrapper de loading -->
 		<div id="wrapperLoading"></div>
 		<!-- WRAPPER -->
@@ -60,16 +60,12 @@
 				</ul>
 
 				<!-- perfil -->
-				<div id="perfil_containter">
-					<img
-						onclick="mostrarDropDown()"
-						src="http://cdn.onlinewebfonts.com/svg/img_24787.png"
-						alt=""
-					/>
+				<div onclick="mostrarDropDown()" id="perfil_container">
+					<i class="fa-solid fa-user"></i>
 					<div id="nomeUser">Olá, All Might!</div>
 					<ul id="dropdown">
 						<div class="triangulo"></div>
-						<li><a href="perfil/perfil.html">Perfil</a></li>
+						<li id="perfil_option"><a href="perfil/perfil.html">Perfil</a></li>
 						<li onclick="mostrarWrapper()">Sair</li>
 					</ul>
 				</div>
@@ -83,7 +79,7 @@
 				<ul class="navbar-items-container">
 					<li>
 						<label for="in_heroName">Nome de herói:</label>
-						<input onchange="pesquisar()" type="text" id="in_heroName" />
+						<input onkeyup="pesquisarHerois()" type="text" id="in_heroName" />
 					</li>
 					<li>
 						<label for="ranking_in">Número no ranking:</label>
@@ -113,11 +109,11 @@
 							</select>
 						</span>
 					</li>
-					<button onclick="pesquisar()">Pesquisar</button>
+					<button onclick="pesquisarHerois()">Pesquisar</button>
 				</ul>
 			</nav>
 			<article class="heroes_container">
-				<h1>Ranking de Heróis</h1>
+				<h1>Ranking dos heróis</h1>
 				<section id="heroes_cards_container"></section>
 			</article>
 		</main>
@@ -165,28 +161,5 @@
 		</footer>
 	</body>
 </html>
-<script>
-	for (let i = 0; i < 22; i++) {
-		document.querySelector("#heroes_cards_container").innerHTML += `
-		<section class="hero-card">
-			<p id="hero_name" class="hero_name">
-			<span>${i + 1}</span>	<span>Death Arms</span></p>
-			<img src="../images/death_arms.webp" alt="" class="hero-img" id="hero_img">
-			<div class="bottom-card-container">
-				<div class="select-container">
-					<select name="" id="in_nota">
-						<option value="1">1</option>
-						<option value="2">2</option>
-						<option value="3">3</option>
-						<option value="4">4</option>
-						<option value="5">5</option>
-					</select>
-					<button id='avaliar-btn'>Avaliar</button>
-				</div>
-				<p id='nota'>Nota: 10</p>
-			</div>
-		</section>
-		`;
-	}
-</script>
 <script src="../js/header.js"></script>
+<script src="../js/herois.js"></script>

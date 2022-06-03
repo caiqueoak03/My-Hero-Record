@@ -1,58 +1,58 @@
 main {
-    height: 87vh;
-    background-color: #1a2865;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+	height: 87vh;
+	background-color: #1a2865;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
 
-form {
-    background-color: #212121;
-    box-shadow: 0 0 5px 2px black;
-    width: 300px;
-    height: 50%;
-    padding: 50px;
-    border-radius: 10px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    row-gap: 30px;
+#form {
+	background-color: #212121;
+	box-shadow: 0 0 5px 2px black;
+	width: 300px;
+	height: 50%;
+	padding: 50px;
+	border-radius: 10px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	row-gap: 30px;
 }
 
-form h1 {
-    font-size: 2rem;
-    color: white;
-    text-shadow: 4px 4px #000;
+#form h1 {
+	font-size: 2rem;
+	color: white;
+	text-shadow: 4px 4px #000;
 }
 
-form ul {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    row-gap: 20px;
+#form ul {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	row-gap: 20px;
 }
 
-form li {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+#form li {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
 }
 
-form label {
-    font-size: 1.5rem;
-    color: #fff;
-    align-self: center;
+#form label {
+	font-size: 1.5rem;
+	color: #fff;
+	align-self: center;
 }
 
-form input {
-    height: 20px;
-    width: 200px;
+#form input {
+	height: 20px;
+	width: 200px;
 }
 
-form button {
-    width: 100px;
-    font-size: 1rem;
-    height: 40px;
+#form button {
+	width: 100px;
+	font-size: 1rem;
+	height: 40px;
 }

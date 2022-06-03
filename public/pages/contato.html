@@ -59,16 +59,12 @@
 				</ul>
 
 				<!-- perfil -->
-				<div id="perfil_containter">
-					<img
-						onclick="mostrarDropDown()"
-						src="http://cdn.onlinewebfonts.com/svg/img_24787.png"
-						alt=""
-					/>
+				<div onclick="mostrarDropDown()" id="perfil_container">
+					<i class="fa-solid fa-user"></i>
 					<div id="nomeUser">Olá, All Might!</div>
 					<ul id="dropdown">
 						<div class="triangulo"></div>
-						<li><a href="perfil/perfil.html">Perfil</a></li>
+						<li id="perfil_option"><a href="perfil/perfil.html">Perfil</a></li>
 						<li onclick="mostrarWrapper()">Sair</li>
 					</ul>
 				</div>
@@ -96,7 +92,7 @@
 
 				<b>Preencha todos os campos</b>
 
-				<form action="">
+				<section id="form">
 					<span class="nome">
 						<p>Nome:</p>
 						<input type="text" id="in_nome" />
@@ -122,8 +118,8 @@
 							rows="6"
 						></textarea>
 					</span>
-					<button onclick="">Enviar</button>
-				</form>
+					<button onclick="validar()">Enviar</button>
+				</section>
 			</section>
 			<!-- </article> -->
 		</main>
@@ -172,3 +168,4 @@
 	</body>
 </html>
 <script src="../js/header.js"></script>
+<script src="../js/contato.js"></script>

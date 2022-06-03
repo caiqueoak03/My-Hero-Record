@@ -1,16 +1,14 @@
-main {
-	height: 87vh;
-	background-color: #1a2865;
+#cadastroForm-container {
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	width: 80%;
 }
 
 #cadastroForm {
 	background-color: #212121;
-	box-shadow: 0 0 5px 2px black;
-	height: 85%;
-	padding: 20px 50px;
+	box-shadow: 0 0 2px 1px black;
+	padding: 5px 50px;
 	border-radius: 10px;
 	display: flex;
 	flex-direction: column;
@@ -24,7 +22,7 @@ main {
 }
 
 #cadastroForm h1 {
-	font-size: 2rem;
+	font-size: 3rem;
 	color: white;
 	text-shadow: 4px 4px #000;
 }
@@ -55,7 +53,9 @@ main {
 }
 
 #cadastroForm input {
-	height: 20px;
+	height: 30px;
+	font-size: 1.3rem;
+	font-family: "Fredoka", sans-serif;
 }
 
 #cadastroForm select {
@@ -65,4 +65,5 @@ main {
 #cadastroForm button {
 	width: 150px;
 	height: 50px;
+	margin: 20px 0;
 }

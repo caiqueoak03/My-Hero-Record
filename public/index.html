@@ -59,16 +59,14 @@
 				</ul>
 
 				<!-- perfil -->
-				<div id="perfil_containter">
-					<img
-						onclick="mostrarDropDown()"
-						src="http://cdn.onlinewebfonts.com/svg/img_24787.png"
-						alt=""
-					/>
+				<div onclick="mostrarDropDown()" id="perfil_container">
+					<i class="fa-solid fa-user"></i>
 					<div id="nomeUser">Olá, All Might!</div>
 					<ul id="dropdown">
 						<div class="triangulo"></div>
-						<li><a href="pages/perfil.html">Perfil</a></li>
+						<li id="perfil_option">
+							<a href="pages/perfil/perfil.html">Perfil</a>
+						</li>
 						<li onclick="mostrarWrapper()">Sair</li>
 					</ul>
 				</div>

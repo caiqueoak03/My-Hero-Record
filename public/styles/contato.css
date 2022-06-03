@@ -41,7 +41,8 @@ main {
 	border-bottom: 1px solid black;
 	padding-bottom: 5px;
 	text-align: center;
-	font-size: 1.35rem;
+	font-size: 1.3rem;
+	letter-spacing: 1px;
 }
 
 .img-container {
@@ -82,16 +83,20 @@ main {
 	background: linear-gradient(to top, #515151, #515151bb);
 }
 
+.form-container * {
+	font-family: "Fredoka", sans-serif;
+}
+
 h1 {
 	font-size: 2rem;
 }
 
 b {
 	margin: 2px 0 10px;
-	font-size: 1.1rem;
+	font-size: 1.2rem;
 }
 
-.form-container form {
+.form-container #form {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -99,9 +104,9 @@ b {
 	row-gap: 8px;
 }
 
-.form-container form span {
+.form-container #form span {
 	width: 100%;
-	font-size: 1.2rem;
+	font-size: 1.3rem;
 }
 
 input {

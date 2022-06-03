@@ -6,6 +6,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>My Hero Record</title>
 		<link rel="stylesheet" href="../../styles/header.css" />
+		<link rel="stylesheet" href="../../styles/perfilNav.css" />
 		<link rel="stylesheet" href="../../styles/perfil.css" />
 		<link rel="icon" href="../../images/logo-site.jpg" type="image/x-icon" />
 		<script
@@ -20,7 +21,7 @@
 		/>
 	</head>
 
-	<body onload="carregarNav()">
+	<body onload="carregarNav(), carregarProfile()">
 		<!-- Wrapper de loading -->
 		<div id="wrapperLoading"></div>
 		<!-- WRAPPER -->
@@ -28,7 +29,7 @@
 			<div class="options-container">
 				<h3>Deseja sair?</h3>
 				<section>
-					<p onclick="deslogar()">Sim</p>
+					<p onclick="deslogar('perfil')">Sim</p>
 					<p onclick="mostrarWrapper()">Não</p>
 				</section>
 			</div>
@@ -59,16 +60,12 @@
 				</ul>
 
 				<!-- perfil -->
-				<div id="perfil_containter">
-					<img
-						onclick="mostrarDropDown()"
-						src="http://cdn.onlinewebfonts.com/svg/img_24787.png"
-						alt=""
-					/>
+				<div onclick="mostrarDropDown()" id="perfil_container">
+					<i class="fa-solid fa-user"></i>
 					<div id="nomeUser">Olá, All Might!</div>
 					<ul id="dropdown">
 						<div class="triangulo"></div>
-						<li><a href="perfil.html">Perfil</a></li>
+						<li id="perfil_option"><a href="perfil.html">Perfil</a></li>
 						<li onclick="mostrarWrapper()">Sair</li>
 					</ul>
 				</div>
@@ -78,15 +75,20 @@
 		<!-- MAIN -->
 		<main>
 			<article class="profile-nav">
-				<section class="profile-container">
-					<img src="../../images/hawks 2.png" alt="" id="profile_pic" />
+				<section id="profile_container">
+					<div class="profile-wrapper"></div>
+					<img
+						src="../../images/default_profile_pic.svg"
+						alt=""
+						id="profile_pic"
+					/>
 					<p id="profile_name">Hawks</p>
 				</section>
 
 				<nav class="nav-options">
 					<a href="perfil.html">
 						<i class="fa-solid fa-book-bookmark"></i>
-						<p>Registros</p>
+						<p>Ocorrências</p>
 					</a>
 					<a href="estatísticas.html">
 						<i class="fa-solid fa-chart-line"></i>
@@ -101,10 +103,10 @@
 
 			<div id="registros_wrapper">
 				<div class="registro-box">
-					<h3>Cadastre seu registro</h3>
-					<label for="in_titulo">Titulo do registro</label>
+					<h3>Cadastre sua ocorrência</h3>
+					<label for="in_titulo">Titulo da ocorrência</label>
 					<input type="text" id="in_titulo" />
-					<label for="in_descricao">Descrição do registro</label>
+					<label for="in_descricao">Descrição da ocorrência</label>
 					<textarea
 						id="in_descricao"
 						maxlength="1000"
@@ -132,7 +134,7 @@
 					<li>
 						<div class="wrapper-registro"></div>
 						<!-- <i class="fa-solid fa-trash-can"></i> -->
-						<h3 id="titulo_registro">Titulo do registro</h3>
+						<h3 id="titulo_registro">Titulo da ocorrência</h3>
 						<p id="descricao_registro">
 							Lorem, ipsum dolor sit amet consectetur adipisicing elit.
 							Consectetur, animi nam. Explicabo, vel. Enim animi id voluptatibus
@@ -151,7 +153,7 @@
 		<li>
 			<div class="wrapper-registro"></div>
 			<!-- <i class="fa-solid fa-trash-can"></i> -->
-			<h3 id="titulo_registro">Titulo do registro</h3>
+			<h3 id="titulo_registro">Titulo da ocorrencia</h3>
 			<p id="descricao_registro">
 				Lorem, ipsum dolor sit amet consectetur adipisicing elit.
 				Consectetur, animi nam. Explicabo, vel. Enim animi id voluptatibus

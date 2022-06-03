@@ -3,6 +3,10 @@ main {
 	flex-direction: column;
 }
 
+main * {
+	font-family: "Fredoka", sans-serif !important;
+}
+
 main article {
 	display: flex;
 	align-items: center;
@@ -41,6 +45,6 @@ main article img {
 }
 
 .text-container p {
-	font-size: 1.2rem;
+	font-size: 1.3rem;
 	text-align: justify;
 }

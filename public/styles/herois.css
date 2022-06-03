@@ -67,6 +67,8 @@ main {
 .navbar-items-container input {
 	text-align: center;
 	width: 100px;
+	font-size: 1.2rem;
+	font-family: "Fredoka", sans-serif;
 }
 
 .navbar-items-container select {
@@ -105,19 +107,23 @@ main {
 	background-color: #1a2865;
 	overflow-y: auto;
 	width: 75%;
-	padding: 50px;
+	padding: 40px;
 	padding-top: 10px;
-	padding-right: 20px;
+	padding-bottom: 75px;
 }
 
 .heroes_container h1 {
 	margin-bottom: 20px;
 	padding: 10px;
 	border-radius: 10px;
-	font-size: 2.5rem;
+	font-size: 2.2rem;
 	color: #fff;
 	text-decoration: underline;
 	background-color: #212121;
+	box-shadow: 0 0 2px 1px black;
+	text-shadow: 2px 2px black;
+	font-family: "Fredoka", sans-serif;
+	text-transform: uppercase;
 }
 
 #heroes_cards_container {
@@ -133,8 +139,8 @@ main {
 .hero-card {
 	border: 1px solid black;
 	border-radius: 10px;
-	width: 22%;
-	height: 75%;
+	width: 23%;
+	height: 412px;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -143,7 +149,7 @@ main {
 	box-shadow: 0 0 5px -1px black;
 }
 
-.hero_name {
+.hero-name-container {
 	text-align: center;
 	border-bottom: 1px solid black;
 	width: 100%;
@@ -154,17 +160,24 @@ main {
 	position: relative;
 }
 
-.hero_name span:first-of-type {
+.hero-name-container span:first-of-type {
 	position: absolute;
 	left: 10px;
-	border: 1px solid black;
-	border-radius: 50%;
-	width: 20px;
-	height: 20px;
+	font-family: "Fredoka", sans-serif;
+	font-weight: 700;
+}
+
+.hero_name {
+	font-size: 1.2rem;
+	font-family: "Fredoka", sans-serif;
+	font-family: sans-serif;
+	margin-left: 10px;
+	text-transform: capitalize;
 }
 
 .hero-img {
 	height: 70%;
+	max-width: 100%;
 }
 
 .bottom-card-container {
@@ -184,6 +197,18 @@ main {
 	column-gap: 10px;
 	width: 100%;
 	padding: 7px 0 10px;
+}
+
+#avaliar_btn {
+	font-family: "Fredoka", sans-serif;
+	font-size: 1rem;
+	font-weight: 700;
+	padding: 2px;
+}
+
+#nota {
+	font-family: "Fredoka", sans-serif;
+	font-weight: 700;
 }
 
 #in_nota {

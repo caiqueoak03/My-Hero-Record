@@ -60,16 +60,12 @@
 			</section>
 
 			<!-- perfil -->
-			<div id="perfil_containter">
-				<img
-					onclick="mostrarDropDown()"
-					src="http://cdn.onlinewebfonts.com/svg/img_24787.png"
-					alt=""
-				/>
+			<div onclick="mostrarDropDown()" id="perfil_container">
+				<i class="fa-solid fa-user"></i>
 				<div id="nomeUser">Olá, All Might!</div>
 				<ul id="dropdown">
 					<div class="triangulo"></div>
-					<li><a href="perfil/perfil.html">Perfil</a></li>
+					<li id="perfil_option"><a href="perfil/perfil.html">Perfil</a></li>
 					<li onclick="mostrarWrapper()">Sair</li>
 				</ul>
 			</div>
@@ -77,7 +73,7 @@
 
 		<!-- MAIN -->
 		<main>
-			<form action="">
+			<section id="cadastroForm">
 				<h1>Cadastro de perfil</h1>
 				<section class="cadastros">
 					<ul class="cadastro_padrao">
@@ -95,7 +91,11 @@
 						</li>
 						<li>
 							<label for="">Senha:</label>
-							<input type="text" id="in_senha" />
+							<input type="password" id="in_senha" />
+						</li>
+						<li>
+							<label for="">Confirmar senha:</label>
+							<input type="password" id="in_confirmarSenha" />
 						</li>
 						<li>
 							<label for="perfil_select">Perfil de usuário:</label>
@@ -108,11 +108,11 @@
 					<ul id="cadastro_heroi">
 						<li>
 							<label for="">Nome de heroi:</label>
-							<input type="text" id="in_nomeHeroi" />
+							<input type="text" id="in_codinome" />
 						</li>
 						<li>
 							<label for="">Número da licença:</label>
-							<input type="text" id="in_numLicença" />
+							<input type="number" id="in_numLicença" />
 						</li>
 						<li>
 							<label for="">Descrição da individualidade:</label>
@@ -126,10 +126,14 @@
 							<label for="">URL da foto de capa:</label>
 							<input type="text" id="in_imgCapaUrl" />
 						</li>
+						<li>
+							<label for="">URL da foto de ranking:</label>
+							<input type="text" id="in_imgRankingUrl" />
+						</li>
 					</ul>
 				</section>
-				<button onclick="cadastrar()">Cadastrar</button>
-			</form>
+				<button onclick="validar()">Cadastrar</button>
+			</section>
 		</main>
 
 		<!-- FOOTER -->
@@ -175,13 +179,5 @@
 		</footer>
 	</body>
 </html>
-<script>
-	function verificarPerfil() {
-		if (perfil_select.value == "heroi") {
-			cadastro_heroi.style.display = "flex";
-		} else {
-			cadastro_heroi.style.display = "none";
-		}
-	}
-</script>
 <script src="../js/header.js"></script>
+<script src="../js/cadastro.js"></script>

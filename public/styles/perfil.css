@@ -1,75 +1,3 @@
-* {
-	box-sizing: border-box;
-}
-
-main {
-	height: 88vh;
-	display: flex;
-	background-color: #c1c1c1;
-}
-
-html {
-	overflow: hidden;
-}
-
-/* PROFILE NAV */
-
-.profile-nav {
-	display: flex;
-	flex-direction: column;
-	height: 100%;
-	width: 35%;
-	background-color: #212121;
-	border-bottom: 100px solid black;
-}
-
-.profile-container {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	row-gap: 15px;
-	background: url(../images/hawks_wallpaper.jpg);
-	background-size: 100% 100%;
-	width: 100%;
-	height: 50%;
-	border: 2px solid black;
-}
-
-.nav-options {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	width: 100%;
-	height: 50%;
-	font-size: 1.5rem;
-	row-gap: 30px;
-}
-
-.nav-options a {
-	display: flex;
-	align-items: center;
-	justify-content: flex-start;
-	column-gap: 10px;
-	width: 165px;
-	color: #fff;
-}
-
-#profile_pic {
-	border-radius: 50%;
-	border: 3px solid #212121;
-	height: 75px;
-	width: 75px;
-	background-color: #fff;
-}
-
-#profile_name {
-	text-shadow: 2px 2px black;
-	color: #fff;
-	font-size: 2rem;
-}
-
 /* REGISTROS */
 
 /* registro wrapper */
@@ -218,4 +146,15 @@ textarea {
 	top: 0;
 	left: 0;
 	border-radius: 10px;
+}
+
+.triangulo {
+	position: absolute;
+	background-color: transparent;
+	top: -5.5px;
+	width: 2px;
+	height: 2px;
+	border-left: 5px solid transparent;
+	border-right: 5px solid transparent;
+	border-bottom: 5px solid #3f3f3f;
 }

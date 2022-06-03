@@ -20,7 +20,7 @@ function mudarManchete(lado) {
 				"O famoso herói Kamui Woods salva o dia mais uma vez. Em um dia de patrulha comum ele encontra vilões assaltando uma loja de conveniências e rapidamente consegue detê-los com sua habilidade de transformar seus braços em raízes de árvore, prendendo-os.",
 		},
 		3: {
-			img: "https://wallpapercave.com/uwp/uwp1615623.jpeg",
+			img: "https://c4.wallpaperflare.com/wallpaper/74/476/56/anime-my-hero-academia-hawks-boku-no-hero-academia-hd-wallpaper-preview.jpg",
 			titulo: "Assalto de vilões a loja de conveniência",
 			descricao:
 				"O famoso herói Kamui Woods salva o dia mais uma vez. Em um dia de patrulha comum ele encontra vilões assaltando uma loja de conveniências e rapidamente consegue detê-los com sua habilidade de transformar seus braços em raízes de árvore, prendendo-os.",
