@@ -99,27 +99,39 @@
 				</nav>
 			</article>
 
-			<article class="registros-container">
-				<i onclick="showBoxRegistro()" class="fa-solid fa-circle-plus"></i>
-				<div id="registros_wrapper">
-					<div class="registro-box">
-						<h3>Cadastre seu registro</h3>
-						<label for="in_titulo">Titulo do registro</label>
-						<input type="text" id="in_titulo" />
-						<label for="in_descricao">Descrição do registro</label>
-						<input type="text" id="in_descricao" />
-						<label for="in_capaUrl">URL da capa</label>
-						<input type="text" id="in_capaUrl" />
-						<div class="box-options">
-							<i class="fa-solid fa-check"></i>
-							<i class="fa-solid fa-xmark"></i>
-						</div>
+			<div id="registros_wrapper">
+				<div class="registro-box">
+					<h3>Cadastre seu registro</h3>
+					<label for="in_titulo">Titulo do registro</label>
+					<input type="text" id="in_titulo" />
+					<label for="in_descricao">Descrição do registro</label>
+					<textarea
+						id="in_descricao"
+						maxlength="1000"
+						style="resize: none"
+						name=""
+						class="campos"
+						cols="1"
+						rows="8"
+					></textarea>
+					<label for="in_capaUrl">URL da capa</label>
+					<input type="text" id="in_capaUrl" />
+					<div class="box-options">
+						<i onclick="cadastrarRegistro()" class="fa-solid fa-check"></i>
+						<i onclick="showBoxRegistro()" class="fa-solid fa-xmark"></i>
 					</div>
 				</div>
+			</div>
+			<article class="registros-container">
+				<i
+					onclick="showBoxRegistro()"
+					id="add_btn"
+					class="fa-solid fa-circle-plus"
+				></i>
 				<ul id="registros_list">
 					<li>
 						<div class="wrapper-registro"></div>
-						<i class="fa-solid fa-trash-can"></i>
+						<!-- <i class="fa-solid fa-trash-can"></i> -->
 						<h3 id="titulo_registro">Titulo do registro</h3>
 						<p id="descricao_registro">
 							Lorem, ipsum dolor sit amet consectetur adipisicing elit.
@@ -138,7 +150,7 @@
 		registros_list.innerHTML += `
 		<li>
 			<div class="wrapper-registro"></div>
-			<i class="fa-solid fa-trash-can"></i>
+			<!-- <i class="fa-solid fa-trash-can"></i> -->
 			<h3 id="titulo_registro">Titulo do registro</h3>
 			<p id="descricao_registro">
 				Lorem, ipsum dolor sit amet consectetur adipisicing elit.
