@@ -1,0 +1,197 @@
+* {
+	box-sizing: border-box;
+}
+
+main {
+	height: 88vh;
+	display: flex;
+	background-color: #c1c1c1;
+}
+
+html {
+	overflow: hidden;
+}
+
+/* PROFILE NAV */
+
+.profile-nav {
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+	width: 30%;
+	background-color: #212121;
+	border-bottom: 100px solid black;
+}
+
+.profile-container {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	row-gap: 15px;
+	background: url(../images/hawks_wallpaper.jpg);
+	background-size: 100% 100%;
+	width: 100%;
+	height: 50%;
+	border: 2px solid black;
+}
+
+.nav-options {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: 50%;
+	font-size: 1.5rem;
+	row-gap: 30px;
+}
+
+.nav-options a {
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	column-gap: 10px;
+	width: 165px;
+	color: #fff;
+}
+
+#profile_pic {
+	border-radius: 50%;
+	border: 3px solid #212121;
+	height: 75px;
+	width: 75px;
+	background-color: #fff;
+}
+
+#profile_name {
+	text-shadow: 2px 2px black;
+	color: #fff;
+	font-size: 2rem;
+}
+
+/* REGISTROS */
+
+.registros-container {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 70%;
+	position: relative;
+}
+
+.fa-circle-plus {
+	position: fixed;
+	bottom: 0;
+	left: 32%;
+	color: #00f;
+	font-size: 2rem;
+	z-index: 8;
+}
+
+.registro-box {
+	display: flex;
+	flex-direction: column;
+	color: #fff;
+	padding: 10px;
+	box-shadow: 0 0 2px 1px black;
+	border-radius: 10px;
+}
+
+.registro-box h3 {
+	font-size: 1.5rem;
+	padding-bottom: 20px;
+	align-self: center;
+}
+
+.registro-box input {
+	width: 100%;
+	padding-bottom: 15px;
+}
+
+#in_capaUrl {
+	padding-bottom: 20px;
+}
+
+.box-options {
+	display: flex;
+	justify-content: center;
+	column-gap: 20px;
+}
+
+.fa-check,
+.fa-xmark {
+}
+
+#registros_wrapper {
+	position: absolute;
+	z-index: 3;
+	width: 100vw;
+	height: 100vh;
+	left: 0;
+	top: 0;
+	background-color: #21212199;
+	display: none;
+}
+
+/* registros list */
+
+#registros_list {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-template-rows: 1fr 1fr 1fr;
+	column-gap: 20px;
+	row-gap: 20px;
+	height: 88vh;
+	overflow-y: auto;
+	padding: 20px;
+}
+
+#registros_list li {
+	display: flex;
+	flex-direction: column;
+	position: relative;
+	overflow-y: auto;
+	background: url(../images/hawks_wallpaper2.jpg);
+	background-size: 100% 100%;
+	border-radius: 10px;
+	box-shadow: 0 0 2px 1px black;
+	height: 150px;
+	padding: 10px;
+	box-sizing: content-box;
+}
+
+#registros_list li i {
+	position: absolute;
+	z-index: 6;
+	top: 5%;
+	left: 90%;
+	color: red;
+	cursor: pointer;
+}
+
+#registros_list h3,
+#registros_list p {
+	color: #fff;
+	z-index: 5;
+}
+
+#registros_list h3 {
+	text-align: center;
+	padding-bottom: 5px;
+}
+
+#registros_list p {
+	text-align: justify;
+}
+
+.wrapper-registro {
+	background-color: #21212199;
+	z-index: 3;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	border-radius: 10px;
+}

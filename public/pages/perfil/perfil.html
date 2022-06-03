@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>My Hero Record</title>
+		<link rel="stylesheet" href="../../styles/header.css" />
+		<link rel="stylesheet" href="../../styles/perfil.css" />
+		<link rel="icon" href="../../images/logo-site.jpg" type="image/x-icon" />
+		<script
+			src="https://kit.fontawesome.com/8c4cdd8d42.js"
+			crossorigin="anonymous"
+		></script>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Bangers&family=Black+Ops+One&family=Bungee+Inline&family=Fredoka:wght@300;400&family=Luckiest+Guy&family=Monoton&family=Sigmar+One&family=Skranji:wght@400;700&family=Staatliches&display=swap"
+			rel="stylesheet"
+		/>
+	</head>
+
+	<body onload="carregarNav()">
+		<!-- Wrapper de loading -->
+		<div id="wrapperLoading"></div>
+		<!-- WRAPPER -->
+		<article id="wrapper">
+			<div class="options-container">
+				<h3>Deseja sair?</h3>
+				<section>
+					<p onclick="deslogar()">Sim</p>
+					<p onclick="mostrarWrapper()">Não</p>
+				</section>
+			</div>
+		</article>
+		<!-- HEADER -->
+		<header class="header">
+			<!-- logo -->
+			<a href="../../index.html" class="logo-container">
+				<img src="../../images/logo.png" alt="" />
+				<p>My Hero Record</p>
+			</a>
+
+			<!-- navbar -->
+			<nav class="navbar-container">
+				<ul class="navbar-list">
+					<li><a href="../../index.html">Notícias</a></li>
+					<li><a href="../sobre.html">Sobre</a></li>
+					<li><a href="../contato.html">Contato</a></li>
+					<li><a href="../herois.html">Ranking dos heróis</a></li>
+				</ul>
+			</nav>
+
+			<!-- cadastro -->
+			<section class="cadastro-container">
+				<ul class="cadastro-list">
+					<li id="cadastro"><a href="../cadastro.html">Cadastrar-se</a></li>
+					<li id="login"><a href="../login.html">Entrar</a></li>
+				</ul>
+
+				<!-- perfil -->
+				<div id="perfil_containter">
+					<img
+						onclick="mostrarDropDown()"
+						src="http://cdn.onlinewebfonts.com/svg/img_24787.png"
+						alt=""
+					/>
+					<div id="nomeUser">Olá, All Might!</div>
+					<ul id="dropdown">
+						<div class="triangulo"></div>
+						<li><a href="perfil.html">Perfil</a></li>
+						<li onclick="mostrarWrapper()">Sair</li>
+					</ul>
+				</div>
+			</section>
+		</header>
+
+		<!-- MAIN -->
+		<main>
+			<article class="profile-nav">
+				<section class="profile-container">
+					<img src="../../images/hawks 2.png" alt="" id="profile_pic" />
+					<p id="profile_name">Hawks</p>
+				</section>
+
+				<nav class="nav-options">
+					<a href="perfil.html">
+						<i class="fa-solid fa-book-bookmark"></i>
+						<p>Registros</p>
+					</a>
+					<a href="estatísticas.html">
+						<i class="fa-solid fa-chart-line"></i>
+						<p>Estatísticas</p>
+					</a>
+					<a href="alterarDados.html">
+						<i class="fa-solid fa-pen-to-square"></i>
+						<p>Alterar Dados</p>
+					</a>
+				</nav>
+			</article>
+
+			<article class="registros-container">
+				<i onclick="showBoxRegistro()" class="fa-solid fa-circle-plus"></i>
+				<div id="registros_wrapper">
+					<div class="registro-box">
+						<h3>Cadastre seu registro</h3>
+						<label for="in_titulo">Titulo do registro</label>
+						<input type="text" id="in_titulo" />
+						<label for="in_descricao">Descrição do registro</label>
+						<input type="text" id="in_descricao" />
+						<label for="in_capaUrl">URL da capa</label>
+						<input type="text" id="in_capaUrl" />
+						<div class="box-options">
+							<i class="fa-solid fa-check"></i>
+							<i class="fa-solid fa-xmark"></i>
+						</div>
+					</div>
+				</div>
+				<ul id="registros_list">
+					<li>
+						<div class="wrapper-registro"></div>
+						<i class="fa-solid fa-trash-can"></i>
+						<h3 id="titulo_registro">Titulo do registro</h3>
+						<p id="descricao_registro">
+							Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+							Consectetur, animi nam. Explicabo, vel. Enim animi id voluptatibus
+							eaque et beatae voluptatum pariatur molestiae quibusdam! Eos ad
+							reiciendis reprehenderit enim est!
+						</p>
+					</li>
+				</ul>
+			</article>
+		</main>
+	</body>
+</html>
+<script>
+	for (let i = 0; i < 21; i++) {
+		registros_list.innerHTML += `
+		<li>
+			<div class="wrapper-registro"></div>
+			<i class="fa-solid fa-trash-can"></i>
+			<h3 id="titulo_registro">Titulo do registro</h3>
+			<p id="descricao_registro">
+				Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+				Consectetur, animi nam. Explicabo, vel. Enim animi id voluptatibus
+				eaque et beatae voluptatum pariatur molestiae quibusdam! Eos ad
+				reiciendis reprehenderit enim est!
+			</p>
+		</li>
+		`;
+	}
+</script>
+<script src="../../js/header.js"></script>
+<script src="../../js/perfil.js"></script>

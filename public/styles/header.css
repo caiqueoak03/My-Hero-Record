@@ -61,7 +61,7 @@ body {
 .header {
 	position: sticky;
 	top: 0;
-	height: 120h;
+	height: 12vh;
 	font-size: 1.3rem;
 	background-color: #ebde0d;
 	border-bottom: 3px solid #ff3333;
