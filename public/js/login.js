@@ -27,10 +27,12 @@ function login() {
 					console.log(json);
 					console.log(JSON.stringify(json));
 
+					alert(JSON.stringify(json) + "");
+
 					sessionStorage.userLogado = true;
 					sessionStorage.perfil = json[0].perfil;
-					sessionStorage.imgPerfilUrl = json[0].imgPerfilUrl;
-					sessionStorage.imgCapaUrl = json[0].imgCapaUrl;
+					sessionStorage.imgPerfilUrl = json[0].imgPerfilURL;
+					sessionStorage.imgCapaUrl = json[0].imgCapaURL;
 					sessionStorage.idUser = json[0].idUsuario;
 
 					if (json[0].perfil == "heroi") {

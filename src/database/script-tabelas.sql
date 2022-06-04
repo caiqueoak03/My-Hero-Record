@@ -34,7 +34,7 @@ CREATE TABLE ocorrencia (
 	fkHeroi int,
 	titulo varchar(45) not null,
 	descrição varchar(300) not null,
-	imgCapaURL varchar(300),
+	imgCapaURL varchar(1000),
 	dtOcorrencia date not null default(CURRENT_DATE()),
 	foreign key (fkHeroi) references usuario (idUsuario)
 );

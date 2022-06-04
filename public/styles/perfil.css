@@ -1,10 +1,14 @@
 /* REGISTROS */
 
+* {
+	font-family: "Bangers", cursive;
+}
+
 /* registro wrapper */
 
 #registros_wrapper {
 	position: absolute;
-	z-index: 9;
+	z-index: 100;
 	width: 100vw;
 	height: 100vh;
 	left: 0;
@@ -13,6 +17,8 @@
 	display: none;
 	align-items: center;
 	justify-content: center;
+	box-sizing: border-box;
+	margin-top: 20px;
 }
 
 .registro-box {
@@ -27,7 +33,8 @@
 	background-color: #212121;
 }
 
-.registro-box h3 {
+.registro-box h3,
+.deletar-box h3 {
 	font-size: 1.5rem;
 	padding-bottom: 30px;
 	align-self: center;
@@ -35,7 +42,12 @@
 
 .registro-box input,
 textarea {
-	margin-bottom: 10px;
+	margin-bottom: 15px;
+}
+
+textarea {
+	padding: 5px;
+	box-sizing: border-box;
 }
 
 .registro-box input {
@@ -43,11 +55,8 @@ textarea {
 	height: 30px;
 }
 
-#in_capaUrl {
-	margin-bottom: 20px;
-}
-
-.box-options {
+.box-options,
+.deletar-box-options {
 	display: flex;
 	justify-content: center;
 	column-gap: 70px;
@@ -85,6 +94,63 @@ textarea {
 	font-size: 2rem;
 	z-index: 8;
 	cursor: pointer;
+	box-shadow: 0 0 4px 1px #000;
+	border-radius: 50%;
+}
+
+.fa-circle-plus:hover {
+	box-shadow: 0 0 2px 1px #000;
+}
+
+/* deletar box */
+
+#deletar_box_wrapper {
+	position: absolute;
+	z-index: 100;
+	width: 100vw;
+	height: 100vh;
+	left: 0;
+	top: 0;
+	background-color: #21212199;
+	display: none;
+	align-items: center;
+	justify-content: center;
+	box-sizing: border-box;
+	margin-top: 20px;
+	text-align: center;
+}
+
+#deletar_box_wrapper * {
+	font-family: "Fredoka", sans-serif !important;
+}
+
+.deletar-box {
+	display: flex;
+	flex-direction: column;
+	color: #fff;
+	padding: 30px;
+	box-shadow: 0 0 2px 1px black;
+	border-radius: 10px;
+	width: 400px;
+	min-height: 200px;
+	background-color: #212121;
+}
+
+.deletar-box h3 {
+	font-size: 1.5rem;
+}
+
+.deletar-box p {
+	cursor: pointer;
+	font-size: 1.3rem;
+	border-radius: 10px;
+	padding: 10px;
+	transition: all 0.3s;
+}
+
+.deletar-box p:hover {
+	background-color: #fff;
+	color: #212121;
 }
 
 /* registros list */
@@ -103,38 +169,48 @@ textarea {
 	display: flex;
 	flex-direction: column;
 	position: relative;
-	overflow-y: auto;
-	background: url(../images/hawks_wallpaper2.jpg);
-	background-size: 100% 100%;
+	background-image: url("https://wallpaperaccess.com/full/840698.jpg");
+	background-size: cover;
 	border-radius: 10px;
 	box-shadow: 0 0 2px 1px black;
 	height: 150px;
+	width: 92%;
 	padding: 10px;
 	box-sizing: content-box;
+	word-break: break-all;
+	text-overflow: ellipsis;
+	color: #fff;
 }
 
 #registros_list li i {
 	position: absolute;
-	z-index: 6;
-	top: 5%;
-	left: 90%;
-	color: red;
+	z-index: 10;
 	cursor: pointer;
 }
 
 #registros_list h3,
 #registros_list p {
-	color: #fff;
 	z-index: 5;
+	width: 100%;
+	font-family: "Fredoka", sans-serif;
 }
 
 #registros_list h3 {
 	text-align: center;
-	padding-bottom: 5px;
+	padding: 7px 0 5px;
 }
 
 #registros_list p {
 	text-align: justify;
+	height: 80%;
+	width: 100%;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.data {
+	text-align: center;
+	z-index: 5;
 }
 
 .wrapper-registro {
@@ -148,6 +224,10 @@ textarea {
 	border-radius: 10px;
 }
 
+.wrapper-registro h3 {
+	margin: 10px 0;
+}
+
 .triangulo {
 	position: absolute;
 	background-color: transparent;
@@ -157,4 +237,18 @@ textarea {
 	border-left: 5px solid transparent;
 	border-right: 5px solid transparent;
 	border-bottom: 5px solid #3f3f3f;
+}
+
+.trash-can {
+	top: 5%;
+	left: 90%;
+	color: red;
+}
+
+.pen {
+	color: rgb(100, 100, 255);
+}
+
+i {
+	cursor: pointer;
 }

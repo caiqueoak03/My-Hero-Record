@@ -21,7 +21,7 @@
 		/>
 	</head>
 
-	<body onload="carregarNav(), carregarProfile()">
+	<body onload="carregarNav(), carregarProfile(), carregarOcorrencias()">
 		<!-- Wrapper de loading -->
 		<div id="wrapperLoading"></div>
 		<!-- WRAPPER -->
@@ -103,66 +103,53 @@
 
 			<div id="registros_wrapper">
 				<div class="registro-box">
-					<h3>Cadastre sua ocorrência</h3>
+					<h3 id="ocorrencia_h3">Cadastre sua ocorrência</h3>
 					<label for="in_titulo">Titulo da ocorrência</label>
-					<input type="text" id="in_titulo" />
+					<input type="text" id="in_titulo" maxlength="40" />
 					<label for="in_descricao">Descrição da ocorrência</label>
 					<textarea
 						id="in_descricao"
-						maxlength="1000"
+						maxlength="300"
 						style="resize: none"
 						name=""
 						class="campos"
 						cols="1"
-						rows="8"
+						rows="7"
 					></textarea>
 					<label for="in_capaUrl">URL da capa</label>
 					<input type="text" id="in_capaUrl" />
+					<label for="in_data">Data da ocorrência</label>
+					<input type="date" id="in_data" />
 					<div class="box-options">
-						<i onclick="cadastrarRegistro()" class="fa-solid fa-check"></i>
+						<i
+							onclick="cadastrarOcorrencia()"
+							class="fa-solid fa-check"
+							id="check_btn"
+						></i>
 						<i onclick="showBoxRegistro()" class="fa-solid fa-xmark"></i>
+					</div>
+				</div>
+			</div>
+
+			<div id="deletar_box_wrapper">
+				<div class="deletar-box" id="deletar_box">
+					<h3>Tem certeza que quer deletar essa ocorrência?</h3>
+					<div class="deletar-box-options">
+						<p onclick="excluirOcorrencia()">Sim</p>
+						<p onclick="associarIdDeletarBox()">Não</p>
 					</div>
 				</div>
 			</div>
 			<article class="registros-container">
 				<i
-					onclick="showBoxRegistro()"
+					onclick="alterarBoxOcorrencia(false)"
 					id="add_btn"
 					class="fa-solid fa-circle-plus"
 				></i>
-				<ul id="registros_list">
-					<li>
-						<div class="wrapper-registro"></div>
-						<!-- <i class="fa-solid fa-trash-can"></i> -->
-						<h3 id="titulo_registro">Titulo da ocorrência</h3>
-						<p id="descricao_registro">
-							Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-							Consectetur, animi nam. Explicabo, vel. Enim animi id voluptatibus
-							eaque et beatae voluptatum pariatur molestiae quibusdam! Eos ad
-							reiciendis reprehenderit enim est!
-						</p>
-					</li>
-				</ul>
+				<ul id="registros_list"></ul>
 			</article>
 		</main>
 	</body>
 </html>
-<script>
-	for (let i = 0; i < 21; i++) {
-		registros_list.innerHTML += `
-		<li>
-			<div class="wrapper-registro"></div>
-			<!-- <i class="fa-solid fa-trash-can"></i> -->
-			<h3 id="titulo_registro">Titulo da ocorrencia</h3>
-			<p id="descricao_registro">
-				Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-				Consectetur, animi nam. Explicabo, vel. Enim animi id voluptatibus
-				eaque et beatae voluptatum pariatur molestiae quibusdam! Eos ad
-				reiciendis reprehenderit enim est!
-			</p>
-		</li>
-		`;
-	}
-</script>
 <script src="../../js/header.js"></script>
 <script src="../../js/perfil.js"></script>

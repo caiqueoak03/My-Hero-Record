@@ -32,7 +32,7 @@ html {
 	align-items: center;
 	row-gap: 15px;
 	background: url("../images/default_profile_wallpaper.webp");
-	background-size: 100% 100%;
+	background-size: cover;
 	width: 100%;
 	height: 50%;
 	border-bottom: 2px solid black;
@@ -60,8 +60,11 @@ html {
 #profile_name {
 	text-shadow: 2px 2px black;
 	color: #fff;
-	font-size: 2rem;
+	font-size: 2.2rem;
 	z-index: 2;
+	font-weight: 700;
+	text-transform: capitalize;
+	font-family: "Roboto", sans-serif;
 }
 
 .nav-options {
@@ -82,4 +85,8 @@ html {
 	column-gap: 10px;
 	width: 165px;
 	color: #fff;
+}
+
+.nav-options a:hover {
+	color: #fffb;
 }

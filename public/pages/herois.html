@@ -21,7 +21,7 @@
 		/>
 	</head>
 
-	<body onload="carregarNav(), listarIdsUsuarios()">
+	<body onload="carregarNav(), listarIdsUsuarios(), pesquisarHerois()">
 		<!-- Wrapper de loading -->
 		<div id="wrapperLoading"></div>
 		<!-- WRAPPER -->
@@ -83,33 +83,36 @@
 					</li>
 					<li>
 						<label for="ranking_in">Número no ranking:</label>
-						<input type="number" id="in_ranking" />
+						<input onkeyup="pesquisarHerois()" type="number" id="in_ranking" />
 					</li>
 					<li>
 						<label for="select_nota_pesquisa">Nota:</label>
-						<select name="select_nota_pesquisa" id="select_nota_pesquisa">
+						<select
+							onchange="pesquisarHerois()"
+							name="select_nota_pesquisa"
+							id="select_nota_pesquisa"
+						>
 							<option value=""></option>
-							<option value="0_2">Entre 0 e 2</option>
-							<option value="2_4">Entre 2 e 4</option>
-							<option value="4_6">Entre 4 e 6</option>
-							<option value="6_8">Entre 6 e 8</option>
+							<option value="0_02">Entre 0 e 2</option>
+							<option value="2_04">Entre 2 e 4</option>
+							<option value="4_06">Entre 4 e 6</option>
+							<option value="6_08">Entre 6 e 8</option>
 							<option value="8_10">Entre 8 e 10</option>
 						</select>
 					</li>
 					<li>
 						<label for="">Ordenar por:</label>
 						<span class="selects">
-							<select name="" id="ordem_item">
-								<option value="nome">nome</option>
+							<select onchange="pesquisarHerois()" name="" id="item_ordem">
 								<option value="ranking">ranking</option>
+								<option value="nome">nome</option>
 							</select>
-							<select name="" id="tipo_ordem">
+							<select onchange="pesquisarHerois()" name="" id="tipo_ordem">
 								<option value="decrescente">Decrescente</option>
 								<option value="crescente">Crescente</option>
 							</select>
 						</span>
 					</li>
-					<button onclick="pesquisarHerois()">Pesquisar</button>
 				</ul>
 			</nav>
 			<article class="heroes_container">

@@ -1,5 +1,7 @@
 /* SETUP */
 
+@import url("https://fonts.googleapis.com/css2?family=Bangers&family=Black+Ops+One&family=Bungee+Inline&family=Fredoka:wght@300;400&family=Kdam+Thmor+Pro&family=Luckiest+Guy&family=Monoton&family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;0,900;1,900&family=Roboto:wght@100;300;400;500;700;900&family=Sigmar+One&family=Skranji:wght@400;700&display=swap");
+
 * {
 	/* Boku no Hero Pallete */
 	--rosa: #ff749e;
@@ -20,15 +22,18 @@
 	/* RESETS */
 	margin: 0;
 	padding: 0;
-	font-family: "Bangers", cursive;
-	font-family: "Black Ops One", cursive;
+	/* font-family: "Black Ops One", cursive;
 	font-family: "Bungee Inline", cursive;
 	font-family: "Fredoka", sans-serif;
+	font-family: "Kdam Thmor Pro", sans-serif;
 	font-family: "Luckiest Guy", cursive;
 	font-family: "Monoton", cursive;
+	font-family: "Montserrat", sans-serif;
+	font-family: "Roboto", sans-serif;
 	font-family: "Sigmar One", cursive;
 	font-family: "Skranji", cursive;
 	font-family: "Staatliches", cursive;
+	font-family: "Bangers", cursive; */
 }
 
 a {
@@ -96,6 +101,7 @@ body {
 .navbar-container ul {
 	display: flex;
 	column-gap: 50px;
+	font-size: 1.4rem;
 }
 
 .header li a:hover {

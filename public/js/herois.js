@@ -176,24 +176,50 @@ function guardarHerois() {
 function pesquisarHerois() {
 	let heroisFiltrados = [];
 
-	let nomeHeroiRegex = new RegExp(in_heroName.value, "gi");
-	const numRanking = in_ranking.value;
-	const notaPesquisa = select_nota_pesquisa.value;
-	const ordemItem = ordem_item.value;
-	const topOrdem = tipo_ordem.value;
+	let nomeHeroiRegex = new RegExp(in_heroName.value.trim(), "gi");
+	let nomeHeroiIn = in_heroName.value.trim();
+	let numRankingIn = in_ranking.value;
+	let notaPesquisaIn = select_nota_pesquisa.value;
+	let notaPesquisaMin = notaPesquisaIn.slice(0, 1);
+	let notaPesquisaMax = Number(notaPesquisaIn.slice(2, 4));
+	let itemOrdem = item_ordem.value;
+	let tipoOrdem = tipo_ordem.value;
 
 	for (let i = 0; i < heroCards.length; i++) {
 		let nomeHeroi = heroCards[i].childNodes[1].childNodes[3].innerHTML;
 		let numRanking =
 			heroCards[i].childNodes[1].childNodes[1].innerHTML.slice(3);
-		let notaPesquisa =
-			heroCards[i].childNodes[5].childNodes[3].innerHTML.slice(6);
+		let notaPesquisa = Number(
+			heroCards[i].childNodes[5].childNodes[3].innerHTML.slice(6),
+		);
 
-		if (nomeHeroiRegex.test(nomeHeroi)) {
-			console.log(nomeHeroi + " " + nomeHeroiRegex.test(nomeHeroi));
+		console.log(nomeHeroi);
+
+		if (
+			(!nomeHeroiIn || nomeHeroiRegex.test(nomeHeroi)) &&
+			(!numRankingIn || numRankingIn == numRanking) &&
+			(!notaPesquisaIn ||
+				(notaPesquisa >= notaPesquisaMin && notaPesquisa <= notaPesquisaMax))
+		) {
 			heroisFiltrados.push(heroCards[i]);
-		} else if (in_heroName.value == "") {
-			heroisFiltrados.push(heroCards[i]);
+		}
+	}
+
+	if (itemOrdem == "ranking") {
+		if (tipoOrdem == "crescente") {
+			heroisFiltrados.sort(
+				(heroi1, heroi2) =>
+					Number(heroi2.childNodes[1].childNodes[1].innerHTML.slice(3)) -
+					Number(heroi1.childNodes[1].childNodes[1].innerHTML.slice(3)),
+			);
+		}
+	} else if (itemOrdem == "nome") {
+		if (tipoOrdem == "decrescente") {
+			heroisFiltrados.sort((heroi1, heroi2) =>
+				heroi2.childNodes[1].childNodes[3].innerHTML.localeCompare(
+					heroi1.childNodes[1].childNodes[3].innerHTML,
+				),
+			);
 		}
 	}
 

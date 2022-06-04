@@ -20,7 +20,7 @@
 			rel="stylesheet"
 		/>
 	</head>
-	<body onload="mudarManchete(), carregarNav()">
+	<body onload="carregarNav(), carregarManchetes()">
 		<!-- Wrapper de loading -->
 		<div id="wrapperLoading"></div>
 		<!-- WRAPPER -->
@@ -131,55 +131,7 @@
 		</article>
 
 		<!-- REGISTROS -->
-		<article class="registros-container">
-			<h3 class="registros-title">Últimas Notícias!</h3>
-			<section class="registros-items">
-				<img
-					src="https://s3.us-east-1.amazonaws.com/dexerto-assets-production-cbbdf288/uploads/2020/05/23213020/my-hero-academia-mt-lady-cosplayer-steps-on-enemies-logo.png"
-					alt=""
-				/>
-				<div class="registros-text-container">
-					<h1>Mt. Lady derrota vilão na linha de trem</h1>
-					<p>
-						A heroína Mt. Lady que tem a individualidade de aumentar seu tamanho
-						em até 50 vezes derrotou um vilão na linha de trem que liga as
-						cidades de Nakano e Tsushima. O vilão estava impedindo a circulação
-						dos trens através de sua individualidade de crescer, até que a
-						heroína chegou golpeando-o quando estava distraído pelo herói Kamui
-						Woods.
-					</p>
-				</div>
-			</section>
-
-			<section class="registros-items">
-				<div class="registros-text-container">
-					<h1>Titulo 1</h1>
-					<p>
-						Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit ut modi
-						qui aspernatur porro quae dolor, obcaecati corporis, facere
-						perspiciatis neque ea blanditiis maiores eos placeat harum optio
-						sapiente quo!
-					</p>
-				</div>
-				<img
-					src="https://i.pinimg.com/originals/02/57/88/02578845a9f80d1315f117eb36f1c691.jpg"
-					alt=""
-				/>
-			</section>
-
-			<section class="registros-items">
-				<img src="https://wallpapercave.com/wp/wp8293568.png" alt="" />
-				<div class="registros-text-container">
-					<h1>Titulo 1</h1>
-					<p>
-						Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit ut modi
-						qui aspernatur porro quae dolor, obcaecati corporis, facere
-						perspiciatis neque ea blanditiis maiores eos placeat harum optio
-						sapiente quo!
-					</p>
-				</div>
-			</section>
-		</article>
+		<article class="registros-container" id="registros_container"></article>
 
 		<!-- FOOTER -->
 		<footer>
