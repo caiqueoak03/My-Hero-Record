@@ -126,18 +126,19 @@ function listarDadosHerois() {
 
 function criarHerois() {
 	for (let i = 0; i < heroisData.length; i++) {
+		console.log(heroisData[i].idUsuario);
 		heroes_cards_container.innerHTML += `
 		<section id='heroi${i}id' class="hero-card">
 			<p class="hero-name-container">
-			<span id="heroi${i}ranking">Nº ${
-			i + 1
-		}</span>	<span id="heroi${i}nome" class="hero_name">${heroisData[
-			i
-		].codinome.toLowerCase()}</span></p>
+				<span id="heroi${i}ranking">Nº ${i + 1}</span>	
+				<span id="heroi${i}nome" class="hero_name">
+				${heroisData[i].codinome.toLowerCase()}
+				</span>
+			</p>
 			<img src="${heroisData[i].imgRankingURL}" alt="" class="hero-img" id="hero_img">
 			<div class="bottom-card-container">
 				<div class="select-container">
-					<select name="" id="in_nota">
+					<select name="" id="in_nota${i}">
 						<option value=""></option>
 						<option value="1">1</option>
 						<option value="2">2</option>
@@ -149,12 +150,15 @@ function criarHerois() {
 						<option value="8">8</option>
 						<option value="9">9</option>
 						<option value="10">10</option>
-						</select>
-						<button onclick="avaliar()" id='avaliar_btn'>Avaliar</button>
-						</div>
-						<p id='heroi${i}nota'>Nota: ${heroisData[i].notaHeroi}</p>
-						</div>
-						</section>
+					</select>
+					<button 
+						onclick="avaliar('${heroisData[i].idUsuario}', in_nota${i}.value)" 
+						id='avaliar_btn'>Avaliar
+					</button>
+				</div>
+				<p id='heroi${i}nota'>Nota: ${heroisData[i].notaHeroi}</p>
+			</div>
+		</section>
 		`;
 	}
 
@@ -230,4 +234,44 @@ function pesquisarHerois() {
 	}
 }
 
-function avaliar() {}
+function avaliar(fkHeroi, nota) {
+	if (!sessionStorage.userLogado) {
+		alert("Você precisa estar logado para avaliar!");
+		return;
+	} else if (nota < 1) {
+		alert("Escolha uma nota!");
+		return;
+	}
+	fetch("/medidas/avaliar", {
+		method: "POST",
+		headers: {
+			"Content-Type": "application/json",
+		},
+		body: JSON.stringify({
+			fkHeroi,
+			nota,
+			fkComum: sessionStorage.idUser,
+		}),
+	})
+		.then(function (resposta) {
+			console.log("ESTOU NO THEN DO avaliar()!");
+
+			if (resposta.ok) {
+				console.log(resposta);
+
+				alert("Avaliação enviada!");
+			} else {
+				console.log("Houve um erro ao tentar avaliar!");
+				alert("Houve um erro inesperado!");
+
+				resposta.text().then((texto) => {
+					console.error(texto);
+				});
+			}
+		})
+		.catch(function (erro) {
+			console.log(erro);
+		});
+
+	return false;
+}

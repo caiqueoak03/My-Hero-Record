@@ -93,8 +93,8 @@ function listarDadosHerois() {
 
 	var instrucao = `
 	SELECT *, truncate(avg(nota), 2) AS notaHeroi FROM usuario
-	JOIN avaliação ON idUsuario = fkHeroi
-		WHERE perfil = 'heroi' GROUP BY idUsuario ORDER By notaHeroi DESC;
+		JOIN avaliação ON idUsuario = fkHeroi
+			WHERE perfil = 'heroi' GROUP BY idUsuario ORDER By notaHeroi DESC;
 	`;
 	console.log("Executando a instrução SQL: \n" + instrucao);
 	return database.executar(instrucao);
