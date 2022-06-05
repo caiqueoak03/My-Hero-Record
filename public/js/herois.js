@@ -30,7 +30,7 @@ function listarIdsUsuarios() {
 					if (heroisId == "") {
 						listarDadosHerois();
 					} else {
-						simularNotas();
+						simularNotas(listarDadosHerois);
 					}
 				});
 			} else {
@@ -48,42 +48,48 @@ function listarIdsUsuarios() {
 	return false;
 }
 
-function simularNotas() {
-	fetch("/usuarios/simularNotas", {
-		method: "POST",
-		headers: {
-			"Content-Type": "application/json",
-		},
-		body: JSON.stringify({
-			heroisId,
-			comunsId,
-		}),
-	})
-		.then(function (resposta) {
-			console.log("ESTOU NO THEN DO simularNotas()!");
-
-			if (resposta.ok) {
-				console.log(resposta);
-
-				resposta.json().then((json) => {
-					console.log(json);
-					console.log(JSON.stringify(json));
-
-					listarDadosHerois();
-				});
-			} else {
-				console.log("Houve um erro ao tentar realizar o simularNotas!");
-
-				resposta.text().then((texto) => {
-					console.error(texto);
-				});
-			}
+function simularNotas(callback = false) {
+	let simular = () =>
+		fetch("/usuarios/simularNotas", {
+			method: "POST",
+			headers: {
+				"Content-Type": "application/json",
+			},
+			body: JSON.stringify({
+				heroisId,
+				comunsId,
+			}),
 		})
-		.catch(function (erro) {
-			console.log(erro);
-		});
+			.then(function (resposta) {
+				console.log("ESTOU NO THEN DO simularNotas()!");
 
-	return false;
+				if (resposta.ok) {
+					console.log(resposta);
+
+					resposta.json().then((json) => {
+						console.log(json);
+						console.log(JSON.stringify(json));
+
+						if (callback) {
+							callback();
+						}
+					});
+				} else {
+					console.log("Houve um erro ao tentar realizar o simularNotas!");
+
+					resposta.text().then((texto) => {
+						console.error(texto);
+					});
+				}
+			})
+			.catch(function (erro) {
+				console.log(erro);
+			});
+
+	simular();
+	clearInterval(simular);
+
+	setInterval(simular, 3000);
 }
 
 function listarDadosHerois() {
@@ -102,6 +108,8 @@ function listarDadosHerois() {
 				resposta.json().then((json) => {
 					console.log(json);
 					console.log("LISTAR DADOS HEROIS:::::" + JSON.stringify(json));
+
+					heroisData = [];
 
 					for (let i = 0; i < json.length; i++) {
 						heroisData.push(json[i]);
@@ -125,8 +133,9 @@ function listarDadosHerois() {
 }
 
 function criarHerois() {
+	heroes_cards_container.innerHTML = "";
+
 	for (let i = 0; i < heroisData.length; i++) {
-		console.log(heroisData[i].idUsuario);
 		heroes_cards_container.innerHTML += `
 		<section id='heroi${i}id' class="hero-card">
 			<p class="hero-name-container">
@@ -170,6 +179,8 @@ let heroCards = [];
 function guardarHerois() {
 	const qtdHeros = document.querySelectorAll(".hero-card").length;
 
+	heroCards = [];
+
 	for (let i = 0; i < qtdHeros; i++) {
 		heroCards.push(document.querySelectorAll(".hero-card")[i]);
 	}
@@ -180,8 +191,7 @@ function guardarHerois() {
 function pesquisarHerois() {
 	let heroisFiltrados = [];
 
-	let nomeHeroiRegex = new RegExp(in_heroName.value.trim(), "gi");
-	let nomeHeroiIn = in_heroName.value.trim();
+	let nomeHeroiIn = in_heroName.value.trim().toLowerCase();
 	let numRankingIn = in_ranking.value;
 	let notaPesquisaIn = select_nota_pesquisa.value;
 	let notaPesquisaMin = notaPesquisaIn.slice(0, 1);
@@ -190,21 +200,23 @@ function pesquisarHerois() {
 	let tipoOrdem = tipo_ordem.value;
 
 	for (let i = 0; i < heroCards.length; i++) {
-		let nomeHeroi = heroCards[i].childNodes[1].childNodes[3].innerHTML;
+		let nomeHeroi = heroCards[i].childNodes[1].childNodes[3].innerHTML
+			.trim()
+			.toLowerCase();
 		let numRanking =
 			heroCards[i].childNodes[1].childNodes[1].innerHTML.slice(3);
 		let notaPesquisa = Number(
 			heroCards[i].childNodes[5].childNodes[3].innerHTML.slice(6),
 		);
 
-		console.log(nomeHeroi);
+		let filtrarNome = !nomeHeroiIn || nomeHeroi.indexOf(nomeHeroiIn) != -1;
 
-		if (
-			(!nomeHeroiIn || nomeHeroiRegex.test(nomeHeroi)) &&
-			(!numRankingIn || numRankingIn == numRanking) &&
-			(!notaPesquisaIn ||
-				(notaPesquisa >= notaPesquisaMin && notaPesquisa <= notaPesquisaMax))
-		) {
+		let filtrarRanking = !numRankingIn || numRankingIn == numRanking;
+		let filtrarNota =
+			!notaPesquisaIn ||
+			(notaPesquisa >= notaPesquisaMin && notaPesquisa <= notaPesquisaMax);
+
+		if (filtrarNome && filtrarRanking && filtrarNota) {
 			heroisFiltrados.push(heroCards[i]);
 		}
 	}
@@ -213,17 +225,18 @@ function pesquisarHerois() {
 		if (tipoOrdem == "crescente") {
 			heroisFiltrados.sort(
 				(heroi1, heroi2) =>
-					Number(heroi2.childNodes[1].childNodes[1].innerHTML.slice(3)) -
-					Number(heroi1.childNodes[1].childNodes[1].innerHTML.slice(3)),
+					Number(heroi2.childNodes[1].childNodes[1].innerHTML.trim().slice(3)) -
+					Number(heroi1.childNodes[1].childNodes[1].innerHTML.trim().slice(3)),
 			);
 		}
 	} else if (itemOrdem == "nome") {
-		if (tipoOrdem == "decrescente") {
-			heroisFiltrados.sort((heroi1, heroi2) =>
-				heroi2.childNodes[1].childNodes[3].innerHTML.localeCompare(
-					heroi1.childNodes[1].childNodes[3].innerHTML,
-				),
-			);
+		heroisFiltrados.sort((heroi1, heroi2) => {
+			return heroi2.childNodes[1].childNodes[3].innerHTML
+				.trim()
+				.localeCompare(heroi1.childNodes[1].childNodes[3].innerHTML.trim());
+		});
+		if (tipoOrdem == "crescente") {
+			heroisFiltrados.reverse();
 		}
 	}
 
@@ -275,3 +288,7 @@ function avaliar(fkHeroi, nota) {
 
 	return false;
 }
+
+module.exports = {
+	simularNotas,
+};

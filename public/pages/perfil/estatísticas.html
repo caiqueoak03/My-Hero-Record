@@ -109,32 +109,54 @@
 				<section class="ocorrencias-estatisticas-container">
 					<ul class="cards-estatisticas-container">
 						<li class="ocorrencias-cards">
-							<select name="" id="ocorrencias_select">
+							<select
+								onchange="pegarOcorrenciasAbsolutas()"
+								name=""
+								id="ocorrencias_select"
+							>
 								<option value="semana">Semana</option>
-								<option value="mês">Mês</option>
+								<option value="mes">Mês</option>
 								<option value="ano">Ano</option>
 							</select>
-							<div class="ocorrencias-card">
-								<h3 id="tituloOcorrencias">Ocorrências</h3>
-								<label id="numOcorrencias" for="">20</label>
+							<div class="ocorrencias-card cards">
+								<h3 id="tituloOcorrencias">Ocorrências absolutas</h3>
+								<label
+									class="numOcorrencias"
+									id="numOcorrenciasAbsolutas"
+									for=""
+									>20</label
+								>
 							</div>
 						</li>
 						<li class="ocorrencias-cards">
-							<select name="" id="mediaOcorrencias_select">
+							<select
+								onchange="pegarOcorrenciasMedias()"
+								name=""
+								id="mediaOcorrencias_select"
+							>
 								<option value="semana">Semana</option>
-								<option value="mês">Mês</option>
+								<option value="mes">Mês</option>
 								<option value="ano">Ano</option>
 							</select>
-							<div class="mediaOcorrencias-card">
+							<div class="mediaOcorrencias-card cards">
 								<h3 id="tituloOcorrencias">Média de ocorrências</h3>
-								<label id="numOcorrencias" for="">100</label>
+								<label class="numOcorrencias" id="numOcorrenciasMedias" for=""
+									>100</label
+								>
 							</div>
 						</li>
 						<li class="ocorrencias-cards">
-							<input type="date" name="" id="in_dataOcorrencias" />
-							<div class="ocorrenciasData-card">
-								<h3 id="tituloOcorrencias">Ocorrências nessa data</h3>
-								<label id="numOcorrencias" for="">5</label>
+							<input
+								onchange="pegarOcorrenciasDia()"
+								type="date"
+								name=""
+								id="in_dataOcorrencias"
+							/>
+							<div class="ocorrenciasData-card cards">
+								<h3 id="tituloOcorrencias">Ocorrências no dia</h3>
+								<label class="numOcorrencias" id="numOcorrenciasDia" for=""
+									>5</label
+								>
 							</div>
 						</li>
 					</ul>
@@ -142,13 +164,20 @@
 
 				<!-- graficos avaliações -->
 				<section class="graficos-container">
-					<div id="grafico_tempoReal"></div>
-					<div id="grafico_popularidade"></div>
+					<div id="grafico_tempoReal" class="graficos">
+						<canvas id="chartRealTime"></canvas>
+					</div>
+					<div id="grafico_popularidade" class="graficos">
+						<canvas id="chartPopularity"></canvas>
+					</div>
 				</section>
 			</article>
 			<!-- estatisticas -->
 		</main>
 	</body>
 </html>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script src="../../js/header.js"></script>
 <script src="../../js/perfil.js"></script>
+<script src="../../js/ocorrencias.js"></script>
+<script src="../../js/graficos.js"></script>

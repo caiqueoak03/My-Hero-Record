@@ -27,8 +27,6 @@ function login() {
 					console.log(json);
 					console.log(JSON.stringify(json));
 
-					alert(JSON.stringify(json) + "");
-
 					sessionStorage.userLogado = true;
 					sessionStorage.perfil = json[0].perfil;
 					sessionStorage.imgPerfilUrl = json[0].imgPerfilURL;
