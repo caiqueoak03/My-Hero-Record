@@ -178,6 +178,7 @@
 
 .registros-text-container {
 	width: 30vw;
+	overflow: auto;
 	padding-top: 20px;
 }
 
