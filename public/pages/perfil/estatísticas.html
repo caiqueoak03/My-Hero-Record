@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>My Hero Record</title>
+		<link rel="stylesheet" href="../../styles/header.css" />
+		<link rel="stylesheet" href="../../styles/perfilNav.css" />
+		<link rel="stylesheet" href="../../styles/estatisticas.css" />
+		<link rel="icon" href="../../images/logo-site.jpg" type="image/x-icon" />
+		<script
+			src="https://kit.fontawesome.com/8c4cdd8d42.js"
+			crossorigin="anonymous"
+		></script>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Bangers&family=Black+Ops+One&family=Bungee+Inline&family=Fredoka:wght@300;400&family=Luckiest+Guy&family=Monoton&family=Sigmar+One&family=Skranji:wght@400;700&family=Staatliches&display=swap"
+			rel="stylesheet"
+		/>
+	</head>
+
+	<body onload="carregarNav(), carregarProfile(), carregarOcorrencias()">
+		<!-- Wrapper de loading -->
+		<div id="wrapperLoading"></div>
+		<!-- WRAPPER -->
+		<article id="wrapper">
+			<div class="options-container">
+				<h3>Deseja sair?</h3>
+				<section>
+					<p onclick="deslogar('perfil')">Sim</p>
+					<p onclick="mostrarWrapper()">Não</p>
+				</section>
+			</div>
+		</article>
+		<!-- HEADER -->
+		<header class="header">
+			<!-- logo -->
+			<a href="../../index.html" class="logo-container">
+				<img src="../../images/logo.png" alt="" />
+				<p>My Hero Record</p>
+			</a>
+
+			<!-- navbar -->
+			<nav class="navbar-container">
+				<ul class="navbar-list">
+					<li><a href="../../index.html">Notícias</a></li>
+					<li><a href="../sobre.html">Sobre</a></li>
+					<li><a href="../contato.html">Contato</a></li>
+					<li><a href="../herois.html">Ranking dos heróis</a></li>
+				</ul>
+			</nav>
+
+			<!-- cadastro -->
+			<section class="cadastro-container">
+				<ul class="cadastro-list">
+					<li id="cadastro"><a href="../cadastro.html">Cadastrar-se</a></li>
+					<li id="login"><a href="../login.html">Entrar</a></li>
+				</ul>
+
+				<!-- perfil -->
+				<div onclick="mostrarDropDown()" id="perfil_container">
+					<i class="fa-solid fa-user"></i>
+					<div id="nomeUser">Olá, All Might!</div>
+					<ul id="dropdown">
+						<div class="triangulo"></div>
+						<li id="perfil_option"><a href="perfil.html">Perfil</a></li>
+						<li onclick="mostrarWrapper()">Sair</li>
+					</ul>
+				</div>
+			</section>
+		</header>
+
+		<!-- MAIN -->
+		<!-- profile nav -->
+		<main>
+			<article class="profile-nav">
+				<section id="profile_container">
+					<div class="profile-wrapper"></div>
+					<img
+						src="../../images/default_profile_pic.svg"
+						alt=""
+						id="profile_pic"
+					/>
+					<p id="profile_name">Hawks</p>
+				</section>
+
+				<nav class="nav-options">
+					<a href="perfil.html">
+						<i class="fa-solid fa-book-bookmark"></i>
+						<p>Ocorrências</p>
+					</a>
+					<a href="estatísticas.html">
+						<i class="fa-solid fa-chart-line"></i>
+						<p>Estatísticas</p>
+					</a>
+					<a href="alterarDados.html">
+						<i class="fa-solid fa-pen-to-square"></i>
+						<p>Alterar Dados</p>
+					</a>
+				</nav>
+			</article>
+			<!-- profile nav -->
+
+			<!-- estatisticas -->
+			<article class="estatistica-container">
+				<!-- ocorrências -->
+				<section class="ocorrencias-estatisticas-container">
+					<ul class="cards-estatisticas-container">
+						<li class="ocorrencias-cards">
+							<select name="" id="ocorrencias_select">
+								<option value="semana">Semana</option>
+								<option value="mês">Mês</option>
+								<option value="ano">Ano</option>
+							</select>
+							<div class="ocorrencias-card">
+								<h3 id="tituloOcorrencias">Ocorrências</h3>
+								<label id="numOcorrencias" for="">20</label>
+							</div>
+						</li>
+						<li class="ocorrencias-cards">
+							<select name="" id="mediaOcorrencias_select">
+								<option value="semana">Semana</option>
+								<option value="mês">Mês</option>
+								<option value="ano">Ano</option>
+							</select>
+							<div class="mediaOcorrencias-card">
+								<h3 id="tituloOcorrencias">Média de ocorrências</h3>
+								<label id="numOcorrencias" for="">100</label>
+							</div>
+						</li>
+						<li class="ocorrencias-cards">
+							<input type="date" name="" id="in_dataOcorrencias" />
+							<div class="ocorrenciasData-card">
+								<h3 id="tituloOcorrencias">Ocorrências nessa data</h3>
+								<label id="numOcorrencias" for="">5</label>
+							</div>
+						</li>
+					</ul>
+				</section>
+
+				<!-- graficos avaliações -->
+				<section class="graficos-container">
+					<div id="grafico_tempoReal"></div>
+					<div id="grafico_popularidade"></div>
+				</section>
+			</article>
+			<!-- estatisticas -->
+		</main>
+	</body>
+</html>
+<script src="../../js/header.js"></script>
+<script src="../../js/perfil.js"></script>

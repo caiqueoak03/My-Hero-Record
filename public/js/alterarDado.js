@@ -161,7 +161,11 @@ function atualizarUser(
 					console.log(json);
 					console.log(JSON.stringify(json));
 
+					sessionStorage.nome = codinome;
+
 					alert("Dados alterados com sucesso!");
+
+					window.location.reload();
 				});
 			} else {
 				console.log("Houve um erro ao tentar realizar as alterações!");
