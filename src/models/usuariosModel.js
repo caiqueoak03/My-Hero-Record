@@ -60,6 +60,11 @@ function listarIdsUsuarios() {
 	return database.executar(instrucao);
 }
 
+// Conta quantas inserções foram feitas nos dados
+var contador = 1;
+// Incrementa na data do dado
+var incrementador = 1;
+
 function simularNotas(heroisId, comunsId) {
 	console.log(
 		"ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function simularNotas(): ",
@@ -74,18 +79,30 @@ function simularNotas(heroisId, comunsId) {
 		for (let k = 0; k < comunsId.length; k++) {
 			let randNota = Math.floor(Math.random() * 10 + 1);
 
-			if (heroisId[i] == 6) {
+			if (heroisId[i] == 1) {
 				randNota = 10;
-			} else if (heroisId[i] == 8) {
+			} else if (heroisId[i] == 2) {
 				randNota = 8.9;
-			} else if (heroisId[i] == 7) {
+			} else if (heroisId[i] == 3) {
 				randNota = 8.1;
 			}
 
-			instrucao += `
-				INSERT INTO avaliação (fkComum, fkHeroi, nota) VALUES 
-				(${comunsId[k]}, ${heroisId[i]}, ${randNota});
+			// Insere 10 dados em uma data, depois insere mais 10 dados em outra data e assim por diante
+			if (contador == 3) {
+				instrucao += `
+					ALTER TABLE avaliação MODIFY dtNota DATETIME NOT NULL DEFAULT(DATE_ADD(now(), INTERVAL ${incrementador} day));
+					INSERT INTO avaliação (fkComum, fkHeroi, nota) VALUES 
+						(${comunsId[k]}, ${heroisId[i]}, ${randNota});
 			`;
+				incrementador++;
+				contador = 0;
+			} else {
+				instrucao += `
+				INSERT INTO avaliação (fkComum, fkHeroi, nota) VALUES 
+					(${comunsId[k]}, ${heroisId[i]}, ${randNota});
+			`;
+				contador++;
+			}
 		}
 	}
 

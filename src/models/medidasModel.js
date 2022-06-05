@@ -67,9 +67,14 @@ function pegarOcorrenciasDia(dataOcorrencia, idHeroi) {
 
 function pegarDadosGraficos(idHeroi) {
 	var instrucaoSql = `
-        SELECT count(idOcorrencia) AS ocorrencias FROM usuario JOIN ocorrencia ON idUsuario = fkHeroi
-            WHERE idUsuario = ${idHeroi} AND dtOcorrencia = '${dataOcorrencia}';
-        `;
+	SELECT time(dtNota) as horario, nota
+		FROM avaliação JOIN usuario ON idUsuario = fkHeroi
+			WHERE idUsuario = ${idHeroi} ORDER BY idAvaliação desc LIMIT 6;
+	SELECT truncate(avg(nota), 2) as avgNotaSemana 
+		FROM avaliação JOIN usuario ON idUsuario = fkHeroi
+			WHERE idUsuario = ${idHeroi} AND MONTH(dtNota) = MONTH(now()) 
+				GROUP BY WEEK(dtNota, 1) ORDER BY WEEK(dtNota, 1) LIMIT 4;
+	`;
 
 	console.log("Executando a instrução SQL: \n" + instrucaoSql);
 	return database.executar(instrucaoSql);

@@ -23,7 +23,7 @@ CREATE TABLE avaliação (
 	fkComum int,
 	fkHeroi int,
 	nota decimal(4,2) not null,
-	dtNota date not null default(CURRENT_DATE()),
+	dtNota datetime not null default(current_timestamp()),
 	foreign key (fkComum) references usuario (idUsuario),
 	foreign key (fkHeroi) references usuario (idUsuario),
 	primary key (idAvaliação, fkComum, fkHeroi)

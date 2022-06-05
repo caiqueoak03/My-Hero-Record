@@ -1,61 +1,105 @@
-var herois = require("../js/herois");
-
 let horarios = [];
 let avaliações = [];
+
+let heroisId = [];
+let comunsId = [];
 
 let semanas = [];
 let avgAvaliaçõesSemana = [];
 
 var primeiroRender = true;
 
-var interval;
+const meses = [
+	"Janeiro",
+	"Fevereiro",
+	"Março",
+	"Abril",
+	"Maio",
+	"Junho",
+	"Julho",
+	"Agosto",
+	"Setembro",
+	"Outubro",
+	"Novembro",
+	"Dezembro",
+];
 
-var intervalo = 3 * 1000;
+let mesAtual = meses[new Date().toJSON().slice(6, 7) - 1];
 
-herois.simularNotas()
+listarIdsUsuarios();
 
-function pegarDados() {
-	var pegar = () =>
-		fetch("/medidas/pegarDadosGraficos", {
+function listarIdsUsuarios() {
+	fetch("/usuarios/listarIdsUsuarios", {
+		method: "GET",
+		headers: {
+			"Content-Type": "application/json",
+		},
+	})
+		.then(function (resposta) {
+			console.log("ESTOU NO THEN DO listarIdsUsuarios()!");
+
+			if (resposta.ok) {
+				console.log(resposta);
+
+				resposta.json().then((json) => {
+					console.log(json);
+					console.log(JSON.stringify(json));
+
+					for (let i = 0; i < json.length; i++) {
+						if (json[i].perfil == "heroi") {
+							heroisId.push(json[i].idUsuario);
+						} else {
+							comunsId.push(json[i].idUsuario);
+						}
+					}
+
+					if (heroisId == "") {
+						alert("nenhum heroi cadastrado");
+					} else {
+						simularNotas();
+					}
+				});
+			} else {
+				console.log("Houve um erro ao tentar realizar o listarIdsUsuarios!");
+
+				resposta.text().then((texto) => {
+					console.error(texto);
+				});
+			}
+		})
+		.catch(function (erro) {
+			console.log(erro);
+		});
+
+	return false;
+}
+
+function simularNotas() {
+	let simular = () =>
+		fetch("/usuarios/simularNotas", {
 			method: "POST",
 			headers: {
 				"Content-Type": "application/json",
 			},
 			body: JSON.stringify({
-				idHeroi: sessionStorage.idUser,
+				heroisId,
+				comunsId,
 			}),
 		})
 			.then(function (resposta) {
-				console.log("ESTOU NO THEN DO pegarDadosGraficos()!");
+				console.log("ESTOU NO THEN DO simularNotas()!");
 
 				if (resposta.ok) {
+					console.log(resposta);
+
 					resposta.json().then((json) => {
 						console.log(json);
-						console.log("json dados: " + JSON.stringify(json));
+						console.log(JSON.stringify(json));
 
-						// RESET
-						horarios = [];
-						avaliações = [];
-
-						semanas = [];
-						avgAvaliaçõesSemana = [];
-
-						for (var i = 0; i < json[0].length; i++) {
-							temperaturaValuesHora.unshift(json[0][i].temperatura);
-							umidadeValuesHora.unshift(json[0][i].umidade);
-							labelsHora.unshift(json[0][i].tempoDado);
-						}
-
-						for (var i = 0; i < json[1].length; i++) {
-							temperaturaValuesSetor.push(json[1][i].avgTemp);
-							umidadeValuesSetor.push(json[1][i].avgUmid);
-							labelsSetor.push(json[1][i].nome);
-						}
-
-						renderizarGraficos();
+						pegarDados();
 					});
 				} else {
-					console.log("Houve um erro ao carregar os dados");
+					console.log("Houve um erro ao tentar realizar o simularNotas!");
 
 					resposta.text().then((texto) => {
 						console.error(texto);
@@ -66,13 +110,64 @@ function pegarDados() {
 				console.log(erro);
 			});
 
-	clearInterval(interval);
+	simular();
+	clearInterval(simular);
 
-	interval = setInterval(() => {
-		pegar();
-	}, intervalo);
+	setInterval(simular, 3000);
+}
 
-	pegar();
+function pegarDados() {
+	fetch("/medidas/pegarDadosGraficos", {
+		method: "POST",
+		headers: {
+			"Content-Type": "application/json",
+		},
+		body: JSON.stringify({
+			idHeroi: sessionStorage.idUser,
+		}),
+	})
+		.then(function (resposta) {
+			console.log("ESTOU NO THEN DO pegarDadosGraficos()!");
+
+			if (resposta.ok) {
+				resposta.json().then((json) => {
+					console.log(json);
+					console.log("json dados: " + JSON.stringify(json));
+
+					// RESET
+					horarios = [];
+					avaliações = [];
+
+					semanas = [];
+					avgAvaliaçõesSemana = [];
+
+					// Avaliações em tempo real
+					for (let i = 0; i < json[0].length; i++) {
+						horarios.push(json[0][i].horario);
+						avaliações.push(json[0][i].nota);
+					}
+
+					// Avaliações por semana
+					if (primeiroRender) {
+						for (let i = 0; i < json[1].length; i++) {
+							semanas.push(`${i + 1}º Semana`);
+							avgAvaliaçõesSemana.push(json[1][i].avgNotaSemana);
+						}
+					}
+
+					renderizarGraficos();
+				});
+			} else {
+				console.log("Houve um erro ao carregar os dados");
+
+				resposta.text().then((texto) => {
+					console.error(texto);
+				});
+			}
+		})
+		.catch(function (erro) {
+			console.log(erro);
+		});
 }
 
 // Renderiza o gráfico usando o chartJS
@@ -80,7 +175,30 @@ function renderizarGraficos() {
 	// Caso não seja a primeira renderização, destruir os gráficos para recriá-los abaixo
 	if (primeiroRender == false) {
 		graficoRealTime.destroy();
-		graficoAvgSemana.destroy();
+	} else {
+		// Avg de avaliações por semana
+		const dataAvgSemana = {
+			labels: semanas,
+			datasets: [
+				{
+					label: `Média de Avaliações por Semana (${mesAtual})`,
+					backgroundColor: "rgb(100,100,255)",
+					borderColor: "rgb(100,100,255)",
+					data: avgAvaliaçõesSemana,
+				},
+			],
+		};
+
+		const configAvgSemana = {
+			type: "bar",
+			data: dataAvgSemana,
+			options: {},
+		};
+
+		graficoAvgSemana = new Chart(
+			document.getElementById("chartPopularity"),
+			configAvgSemana,
+		);
 	}
 
 	// Avaliações real time
@@ -105,30 +223,6 @@ function renderizarGraficos() {
 	graficoRealTime = new Chart(
 		document.getElementById("chartRealTime"),
 		configRealTime,
-	);
-
-	// Avg de avaliações por semana
-	const dataAvgSemana = {
-		labels: semanas,
-		datasets: [
-			{
-				label: "Média de Avaliações por Semana",
-				backgroundColor: "rgb(100,100,255)",
-				borderColor: "rgb(100,100,255)",
-				data: avgAvaliaçõesSemana,
-			},
-		],
-	};
-
-	const configAvgSemana = {
-		type: "bar",
-		data: dataAvgSemana,
-		options: {},
-	};
-
-	graficoAvgSemana = new Chart(
-		document.getElementById("chartPopularity"),
-		configAvgSemana,
 	);
 
 	primeiroRender = false;

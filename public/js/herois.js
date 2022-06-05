@@ -1,6 +1,7 @@
-let comunsId = [];
-let heroisId = [];
-let heroisData = [];
+var comunsId = [];
+var heroisId = [];
+var heroisData = [];
+var heroCards = [];
 
 function listarIdsUsuarios() {
 	fetch("/usuarios/listarIdsUsuarios", {
@@ -30,7 +31,7 @@ function listarIdsUsuarios() {
 					if (heroisId == "") {
 						listarDadosHerois();
 					} else {
-						simularNotas(listarDadosHerois);
+						simularNotas();
 					}
 				});
 			} else {
@@ -48,7 +49,7 @@ function listarIdsUsuarios() {
 	return false;
 }
 
-function simularNotas(callback = false) {
+function simularNotas() {
 	let simular = () =>
 		fetch("/usuarios/simularNotas", {
 			method: "POST",
@@ -70,9 +71,7 @@ function simularNotas(callback = false) {
 						console.log(json);
 						console.log(JSON.stringify(json));
 
-						if (callback) {
-							callback();
-						}
+						listarDadosHerois();
 					});
 				} else {
 					console.log("Houve um erro ao tentar realizar o simularNotas!");
@@ -165,7 +164,7 @@ function criarHerois() {
 						id='avaliar_btn'>Avaliar
 					</button>
 				</div>
-				<p id='heroi${i}nota'>Nota: ${heroisData[i].notaHeroi}</p>
+				<p id='${heroisData[i].idUsuario}'>Nota: ${heroisData[i].notaHeroi}</p>
 			</div>
 		</section>
 		`;
@@ -173,8 +172,6 @@ function criarHerois() {
 
 	guardarHerois();
 }
-
-let heroCards = [];
 
 function guardarHerois() {
 	const qtdHeros = document.querySelectorAll(".hero-card").length;
@@ -288,7 +285,3 @@ function avaliar(fkHeroi, nota) {
 
 	return false;
 }
-
-module.exports = {
-	simularNotas,
-};

@@ -15,6 +15,10 @@ router.post("/pegarOcorrenciasDia", function (req, res) {
 	medidasController.pegarOcorrenciasDia(req, res);
 });
 
+router.post("/avaliar", function (req, res) {
+	medidasController.avaliar(req, res);
+});
+
 router.post("/pegarDadosGraficos", function (req, res) {
 	medidasController.pegarDadosGraficos(req, res);
 });
