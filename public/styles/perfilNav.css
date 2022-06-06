@@ -76,6 +76,7 @@ html {
 	height: 50%;
 	font-size: 1.5rem;
 	row-gap: 30px;
+	font-family: "Bangers", cursive;
 }
 
 .nav-options a {

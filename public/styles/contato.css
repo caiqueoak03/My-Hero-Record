@@ -10,12 +10,15 @@
 		text-shadow: 7px 7px #000;
 	}
 }
+main * {
+	font-family: "Fredoka", sans-serif;
+}
 
 main {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	padding: 0 50px;
+	padding: 0 20px 0 50px;
 	background-color: #b2e1f5;
 	height: 87.5vh;
 }
@@ -43,6 +46,7 @@ main {
 	text-align: center;
 	font-size: 1.3rem;
 	letter-spacing: 1px;
+	font-family: "Staatliches", cursive;
 }
 
 .img-container {
@@ -61,6 +65,7 @@ main {
 	font-size: 5.5rem;
 	transform: translateX(15px);
 	animation: textAnimation alternate-reverse infinite 1s;
+	font-family: "Staatliches", cursive;
 }
 
 .img-container img {

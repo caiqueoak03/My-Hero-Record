@@ -22,7 +22,7 @@
 	/* RESETS */
 	margin: 0;
 	padding: 0;
-	font-family: "Black Ops One", cursive;
+	/* font-family: "Black Ops One", cursive;
 	font-family: "Bungee Inline", cursive;
 	font-family: "Kdam Thmor Pro", sans-serif;
 	font-family: "Luckiest Guy", cursive;
@@ -32,8 +32,9 @@
 	font-family: "Sigmar One", cursive;
 	font-family: "Skranji", cursive;
 	font-family: "Staatliches", cursive;
-	font-family: "Fredoka", sans-serif;
 	font-family: "Bangers", cursive;
+	font-family: "Fredoka", sans-serif; 
+	*/
 }
 
 a {
@@ -43,6 +44,7 @@ a {
 
 li {
 	list-style-type: none;
+	font-family: "Bangers", cursive;
 }
 
 /* Wrapper de loading */

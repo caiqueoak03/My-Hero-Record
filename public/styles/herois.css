@@ -24,6 +24,7 @@ main {
 
 .navbar p:first-child {
 	font-size: 2rem;
+	font-family: "Bangers", cursive;
 }
 
 .navbar select {
@@ -68,12 +69,13 @@ main {
 	text-align: center;
 	width: 100px;
 	font-size: 1.2rem;
-	font-family: "Fredoka", sans-serif;
+	font-family: "Staatliches", cursive;
 }
 
 .navbar-items-container select {
 	width: 104px;
 	height: 25px;
+	font-family: "Staatliches", cursive;
 }
 
 .navbar-items-container li:first-child input {
@@ -122,7 +124,8 @@ main {
 	background-color: #212121;
 	box-shadow: 0 0 2px 1px black;
 	text-shadow: 2px 2px black;
-	font-family: "Fredoka", sans-serif;
+	font-family: "Bangers", cursive;
+	letter-spacing: 5px;
 	text-transform: uppercase;
 }
 
