@@ -8,28 +8,33 @@ CREATE TABLE usuario (
 	sobrenome varchar(45) not null,
 	email varchar(45) not null unique,
 	senha varchar(45) not null,
-	perfil varchar(45) not null, check (perfil in ('comum', 'profissional')),
-	nomeHeroi varchar(45),
+	perfil varchar(45) not null,
+	check (perfil in ('comum', 'heroi')),
+	codinome varchar(45),
 	numLicença char(11),
 	individualidade varchar(300),
-	imgPerfilURL varchar(300),
-	imgCapaURL varchar(300)
+	imgPerfilURL varchar(1000),
+	imgCapaURL varchar(1000),
+	imgRankingURL varchar(1000)
 );
-
+    
 CREATE TABLE avaliação (
-	fkFã int,
+	idAvaliação int auto_increment,
+	fkComum int,
 	fkHeroi int,
-    nota int,
-	foreign key (fkFã) references usuario (idUsuario),
+	nota decimal(4,2) not null,
+	dtNota datetime not null default(current_timestamp()),
+	foreign key (fkComum) references usuario (idUsuario),
 	foreign key (fkHeroi) references usuario (idUsuario),
-	primary key (fkFã, fkHeroi)
+	primary key (idAvaliação, fkComum, fkHeroi)
 );
 
-CREATE TABLE registro (
-	idRegistro int primary key auto_increment,
-	titulo varchar(45),
-	descrição varchar(300),
-    imgCapaURL varchar(300),
+CREATE TABLE ocorrencia (
+	idOcorrencia int primary key auto_increment,
 	fkHeroi int,
+	titulo varchar(45) not null,
+	descrição varchar(300) not null,
+	imgCapaURL varchar(1000),
+	dtOcorrencia date not null default(CURRENT_DATE()),
 	foreign key (fkHeroi) references usuario (idUsuario)
 );

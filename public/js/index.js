@@ -1,49 +1,43 @@
 var manchetesDestaque = [
-	{
-		img: "https://3.bp.blogspot.com/-Id-gwzZmLUI/YTEZrRaRFAI/AAAAAAAAKVE/HhCdtZnkwH45gzvfjZcRScWuhBpZyHoiACPcBGAsYHg/w919/kamui-woods-mha-1-4k-uhdpaper.com-973.0_b-thumbnail.jpg",
-		titulo: "Assalto de vilões a loja de conveniência",
-		descricao:
-			"O famoso herói Kamui Woods salva o dia mais uma vez. Em um dia de patrulha comum ele encontra vilões assaltando uma loja de conveniências e rapidamente consegue detê-los com sua habilidade de transformar seus braços em raízes de árvore, prendendo-os.",
-	},
-	{
-		img: "https://static1.cbrimages.com/wordpress/wp-content/uploads/2020/10/My-Hero-Academia-Edgeshot-Attacked.jpg?q=50&fit=crop&w=1920&dpr=1.5",
-		titulo: "Ataque a base dos vilões",
-		descricao:
-			"O herói número 4, Edgeshot fez um ataque surpresa à base do grupo de vilões conhecida como Black Hand. O herói informou ao noticiário que através de uma investigação conjunta com a polícia, descobriu o paradeiro de um dos membros do grupo que ficava próximo a uma famosa rua de Nakano.",
-	},
-	{
-		img: "https://static1.cbrimages.com/wordpress/wp-content/uploads/2021/08/Snipe-Holding-His-Pistol-At-USJ.jpg?q=50&fit=crop&w=1914&dpr=1.5",
-		titulo: "Assalto de vilões a loja de conveniência",
-		descricao:
-			"O famoso herói Kamui Woods salva o dia mais uma vez. Em um dia de patrulha comum ele encontra vilões assaltando uma loja de conveniências e rapidamente consegue detê-los com sua habilidade de transformar seus braços em raízes de árvore, prendendo-os.",
-	},
-	{
-		img: "https://c4.wallpaperflare.com/wallpaper/74/476/56/anime-my-hero-academia-hawks-boku-no-hero-academia-hd-wallpaper-preview.jpg",
-		titulo: "Assalto de vilões a loja de conveniência",
-		descricao:
-			"O famoso herói Kamui Woods salva o dia mais uma vez. Em um dia de patrulha comum ele encontra vilões assaltando uma loja de conveniências e rapidamente consegue detê-los com sua habilidade de transformar seus braços em raízes de árvore, prendendo-os. O famoso herói Kamui Woods salva o dia mais uma vez. Em um dia de patrulha comum ele encontra vilões assaltando uma loja de conveniências e rapidamente consegue detê-los com sua habilidade de transformar seus braços em raízes de árvore, prendendo-os.",
-	},
+	// {
+	// 	img: "https://static1.cbrimages.com/wordpress/wp-content/uploads/2020/10/My-Hero-Academia-Edgeshot-Attacked.jpg?q=50&fit=crop&w=1920&dpr=1.5",
+	// 	titulo: "Ataque a base dos vilões",
+	// 	descricao:
+	// 		"O herói número 4, Edgeshot fez um ataque surpresa à base do grupo de vilões conhecida como Black Hand. O herói informou ao noticiário que através de uma investigação conjunta com a polícia, descobriu o paradeiro de um dos membros do grupo que ficava próximo a uma famosa rua de Nakano.",
+	// },
+	// {
+	// 	img: "https://static1.cbrimages.com/wordpress/wp-content/uploads/2021/08/Snipe-Holding-His-Pistol-At-USJ.jpg?q=50&fit=crop&w=1914&dpr=1.5",
+	// 	titulo: "Assalto de vilões a loja de conveniência",
+	// 	descricao:
+	// 		"O famoso herói Kamui Woods salva o dia mais uma vez. Em um dia de patrulha comum ele encontra vilões assaltando uma loja de conveniências e rapidamente consegue detê-los com sua habilidade de transformar seus braços em raízes de árvore, prendendo-os.",
+	// },
+	// {
+	// 	img: "https://c4.wallpaperflare.com/wallpaper/74/476/56/anime-my-hero-academia-hawks-boku-no-hero-academia-hd-wallpaper-preview.jpg",
+	// 	titulo: "Assalto de vilões a loja de conveniência",
+	// 	descricao:
+	// 		"O famoso herói Kamui Woods salva o dia mais uma vez. Em um dia de patrulha comum ele encontra vilões assaltando uma loja de conveniências e rapidamente consegue detê-los com sua habilidade de transformar seus braços em raízes de árvore, prendendo-os. O famoso herói Kamui Woods salva o dia mais uma vez. Em um dia de patrulha comum ele encontra vilões assaltando uma loja de conveniências e rapidamente consegue detê-los com sua habilidade de transformar seus braços em raízes de árvore, prendendo-os.",
+	// },
 ];
 
 var ultimasNoticias = [
-	{
-		img: "https://s3.us-east-1.amazonaws.com/dexerto-assets-production-cbbdf288/uploads/2020/05/23213020/my-hero-academia-mt-lady-cosplayer-steps-on-enemies-logo.png",
-		titulo: "Mt. Lady derrota vilão na linha de trem",
-		descricao:
-			"A heroína Mt. Lady que tem a individualidade de aumentar seu tamanho em até 50 vezes derrotou um vilão na linha de trem que liga as cidades de Nakano e Tsushima. O vilão estava impedindo a circulação dos trens através de sua individualidade de crescer, até que a heroína chegou golpeando-o quando estava distraído pelo herói Kamui Woods.",
-	},
-	{
-		img: "https://i.pinimg.com/originals/02/57/88/02578845a9f80d1315f117eb36f1c691.jpg",
-		titulo: "Mt. Lady derrota vilão na linha de trem",
-		descricao:
-			"A heroína Mt. Lady que tem a individualidade de aumentar seu tamanho em até 50 vezes derrotou um vilão na linha de trem que liga as cidades de Nakano e Tsushima. O vilão estava impedindo a circulação dos trens através de sua individualidade de crescer, até que a heroína chegou golpeando-o quando estava distraído pelo herói Kamui Woods.",
-	},
-	{
-		img: "https://wallpapercave.com/wp/wp8293568.png",
-		titulo: "Mt. Lady derrota vilão na linha de trem",
-		descricao:
-			"A heroína Mt. Lady que tem a individualidade de aumentar seu tamanho em até 50 vezes derrotou um vilão na linha de trem que liga as cidades de Nakano e Tsushima. O vilão estava impedindo a circulação dos trens através de sua individualidade de crescer, até que a heroína chegou golpeando-o quando estava distraído pelo herói Kamui Woods.",
-	},
+	// {
+	// 	img: "https://s3.us-east-1.amazonaws.com/dexerto-assets-production-cbbdf288/uploads/2020/05/23213020/my-hero-academia-mt-lady-cosplayer-steps-on-enemies-logo.png",
+	// 	titulo: "Mt. Lady derrota vilão na linha de trem",
+	// 	descricao:
+	// 		"A heroína Mt. Lady que tem a individualidade de aumentar seu tamanho em até 50 vezes derrotou um vilão na linha de trem que liga as cidades de Nakano e Tsushima. O vilão estava impedindo a circulação dos trens através de sua individualidade de crescer, até que a heroína chegou golpeando-o quando estava distraído pelo herói Kamui Woods.",
+	// },
+	// {
+	// 	img: "https://i.pinimg.com/originals/02/57/88/02578845a9f80d1315f117eb36f1c691.jpg",
+	// 	titulo: "Mt. Lady derrota vilão na linha de trem",
+	// 	descricao:
+	// 		"A heroína Mt. Lady que tem a individualidade de aumentar seu tamanho em até 50 vezes derrotou um vilão na linha de trem que liga as cidades de Nakano e Tsushima. O vilão estava impedindo a circulação dos trens através de sua individualidade de crescer, até que a heroína chegou golpeando-o quando estava distraído pelo herói Kamui Woods.",
+	// },
+	// {
+	// 	img: "https://wallpapercave.com/wp/wp8293568.png",
+	// 	titulo: "Mt. Lady derrota vilão na linha de trem",
+	// 	descricao:
+	// 		"A heroína Mt. Lady que tem a individualidade de aumentar seu tamanho em até 50 vezes derrotou um vilão na linha de trem que liga as cidades de Nakano e Tsushima. O vilão estava impedindo a circulação dos trens através de sua individualidade de crescer, até que a heroína chegou golpeando-o quando estava distraído pelo herói Kamui Woods.",
+	// },
 ];
 
 function carregarManchetes() {
@@ -64,26 +58,26 @@ function carregarManchetes() {
 					console.log(json);
 					console.log(JSON.stringify(json));
 
+					manchetesDestaque = [];
+					ultimasNoticias = [];
+
 					for (let i = 0; i < json.length; i++) {
 						if (json[i].nota >= 8) {
-							manchetesDestaque.shift();
 							manchetesDestaque.push({
 								img: `${json[i].imgCapaURL.toString()}`,
 								titulo: `${json[i].titulo.toString()}`,
 								descricao: `${json[i].descrição.toString()}`,
 							});
 						} else {
-							ultimasNoticias.shift();
 							ultimasNoticias.push({
 								img: `${json[i].imgCapaURL.toString()}`,
 								titulo: `${json[i].titulo.toString()}`,
 								descricao: `${json[i].descrição.toString()}`,
 							});
 						}
-
-						renderizarNoticias();
-						mudarManchete();
 					}
+					renderizarNoticias();
+					mudarManchete();
 				});
 			} else {
 				console.log("Houve um erro ao tentar realizar o carregarManchetes!");
@@ -105,7 +99,7 @@ function renderizarNoticias() {
 	<h3 class='registros-title'>Últimas Notícias!</h3>
 	`;
 
-	for (let i = 0; i < ultimasNoticias.length; i++) {
+	for (let i = 0; i < 3; i++) {
 		registros_container.innerHTML += `
 			<section class="registros-items">
 				<img

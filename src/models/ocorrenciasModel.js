@@ -41,10 +41,18 @@ function excluirOcorrencia(idOcorrencia) {
 }
 
 function carregarManchetes() {
+	//semana
+	// const instrucaoSql = `
+	// SELECT titulo, descrição, ocorrencia.imgCapaURL, nota FROM usuario JOIN avaliação ON idUsuario = avaliação.fkHeroi
+	// 	JOIN ocorrencia ON idUsuario = ocorrencia.fkHeroi
+	// 		WHERE YEARWEEK(ocorrencia.dtOcorrencia, 1) = YEARWEEK(CURDATE(), 1) ORDER BY rand() LIMIT 4;
+	//   `;
+
+	// simulação
 	const instrucaoSql = `
-	SELECT titulo, descrição, ocorrencia.imgCapaURL, nota FROM usuario JOIN avaliação ON idUsuario = avaliação.fkHeroi 
+	SELECT titulo, descrição, ocorrencia.imgCapaURL, avg(nota) as nota FROM usuario join avaliação on idUsuario = avaliação.fkHeroi
 		JOIN ocorrencia ON idUsuario = ocorrencia.fkHeroi 
-			WHERE YEARWEEK(ocorrencia.dtOcorrencia, 1) = YEARWEEK(CURDATE(), 1) ORDER BY rand() LIMIT 4;
+			group by titulo order by idOcorrencia desc;
     `;
 
 	console.log("Executando a instrução SQL: \n" + instrucaoSql);
