@@ -239,8 +239,13 @@ function pesquisarHerois() {
 
 	heroes_cards_container.innerHTML = "";
 
-	for (let i = 0; i < heroisFiltrados.length; i++) {
-		heroes_cards_container.append(heroisFiltrados[i]);
+	if (heroisFiltrados == "") {
+		alerta_resultado.style.display = "flex";
+	} else {
+		alerta_resultado.style.display = "none";
+		for (let i = 0; i < heroisFiltrados.length; i++) {
+			heroes_cards_container.append(heroisFiltrados[i]);
+		}
 	}
 }
 

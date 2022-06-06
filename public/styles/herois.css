@@ -112,6 +112,7 @@ main {
 	padding: 40px;
 	padding-top: 10px;
 	padding-bottom: 75px;
+	position: relative;
 }
 
 .heroes_container h1 {
@@ -127,6 +128,18 @@ main {
 	font-family: "Bangers", cursive;
 	letter-spacing: 5px;
 	text-transform: uppercase;
+}
+
+#alerta_resultado {
+	font-size: 2rem;
+	color: #fff;
+	text-shadow: 2px 2px #000;
+	top: 50%;
+	left: 50%;
+	position: absolute;
+	transform: translate(-50%, -50%);
+	font-family: "Bangers", cursive;
+	letter-spacing: 5px;
 }
 
 #heroes_cards_container {
