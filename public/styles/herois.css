@@ -140,6 +140,7 @@ main {
 	transform: translate(-50%, -50%);
 	font-family: "Bangers", cursive;
 	letter-spacing: 5px;
+	display: none;
 }
 
 #heroes_cards_container {
