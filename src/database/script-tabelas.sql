@@ -44,7 +44,7 @@ INSERT INTO
 VALUES
 	(null, 'Toshinori', 'Yagi', 'allmight@gmail.com','123','heroi','all might','12312312312','one for all',
 		'https://i.pinimg.com/originals/fc/9b/f5/fc9bf5011b74827a04b910a20f42fc6d.png',
-		'https://images8.alphacoders.com/713/713073.png',
+		'https://wallpaperaccess.com/full/5178804.jpg',
 		'https://i.pinimg.com/originals/c8/af/90/c8af903d667860c8993e46bec640dfa6.png'
 	);
 
@@ -142,7 +142,7 @@ INSERT INTO ocorrencia VALUES
 (null, 1, 'All Might salva escola UA contra ataque de vilões', 'O herói número 1 salva o dia mais uma vez contra o ataque do famoso grupo de vilões que se acredita que pertença ao vilão número, o All for One.', 'https://www.enjpg.com/img/2020/all-might-6.jpg', '2022-06-06');
 
 INSERT INTO ocorrencia VALUES 
-(null, 2, 'Endeavour derrota vilão que atacava civis em zona urbana', 'O herói número 2 salvou civis que rondavam a zona urbana da cidade de Shimoto. O vilão tinha poderes de telecinese e o Endeavour consiguiu prender o vilão sem deixar vitimas.', 'https://images8.alphacoders.com/932/thumb-1920-932250.jpg', '2022-06-08');
+(null, 2, 'Endeavour derrota vilão que atacava civis em zona urbana', 'O herói número 2 salvou civis que rondavam a zona urbana da cidade de Shimoto. O vilão tinha poderes de telecinese e o Endeavour consiguiu prender o vilão sem deixar vitimas.', 'https://i.pinimg.com/originals/02/57/88/02578845a9f80d1315f117eb36f1c691.jpg', '2022-06-08');
 
 INSERT INTO ocorrencia VALUES 
 (null, 1, 'All Might derrota vilão que atacou estudante', 'O vilão que tem a individualidade de se transformar em uma gosma que pode sufocar as pessoas atacou um jovem estudante que passava pela região onde acredita-se que o vilão atua, e o All Might chegou para salvar o jovem.', 'https://www.teahub.io/photos/full/279-2799985_all-might-wallpaper-my-hero-academia-all-might.jpg', '2022-06-01');

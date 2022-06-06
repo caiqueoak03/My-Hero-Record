@@ -1,26 +1,31 @@
 /* MAIN */
 
 @keyframes textAnimation {
-	from {
-		letter-spacing: 20px;
-		text-shadow: 0;
-	}
-	to {
-		letter-spacing: 25px;
-		text-shadow: 7px 7px #000;
-	}
+  from {
+    letter-spacing: 20px;
+    text-shadow: 0;
+  }
+  to {
+    letter-spacing: 25px;
+    text-shadow: 7px 7px #000;
+  }
 }
+
+.navbar-list li:nth-of-type(3) a {
+  text-decoration: underline !important;
+}
+
 main * {
-	font-family: "Fredoka", sans-serif;
+  font-family: "Fredoka", sans-serif;
 }
 
 main {
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	padding: 0 20px 0 50px;
-	background-color: #b2e1f5;
-	height: 87.5vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px 0 50px;
+  background-color: #b2e1f5;
+  height: 87.5vh;
 }
 
 /* .card-container {
@@ -30,118 +35,118 @@ main {
 } */
 
 .img-section {
-	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
-	align-items: center;
-	width: 55%;
-	height: 100%;
-	padding-top: 20px;
-	box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 55%;
+  height: 100%;
+  padding-top: 20px;
+  box-sizing: border-box;
 }
 
 .img-section h3 {
-	border-bottom: 1px solid black;
-	padding-bottom: 5px;
-	text-align: center;
-	font-size: 1.3rem;
-	letter-spacing: 1px;
-	font-family: "Staatliches", cursive;
+  border-bottom: 1px solid black;
+  padding-bottom: 5px;
+  text-align: center;
+  font-size: 1.3rem;
+  letter-spacing: 1px;
+  font-family: "Staatliches", cursive;
 }
 
 .img-container {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	position: relative;
-	height: 85%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  height: 85%;
 }
 
 .img-container p {
-	position: absolute;
-	top: -10px;
-	color: #f1f1f1;
-	font-size: 5.5rem;
-	transform: translateX(15px);
-	animation: textAnimation alternate-reverse infinite 1s;
-	font-family: "Staatliches", cursive;
+  position: absolute;
+  top: -10px;
+  color: #f1f1f1;
+  font-size: 5.5rem;
+  transform: translateX(15px);
+  animation: textAnimation alternate-reverse infinite 1s;
+  font-family: "Staatliches", cursive;
 }
 
 .img-container img {
-	height: 100%;
-	width: 100%;
+  height: 100%;
+  width: 100%;
 }
 
 /* FORMULARIO */
 
 .form-container {
-	width: 42%;
-	height: 95%;
-	border: 2px solid black;
-	border-radius: 10px;
-	box-shadow: 0 0 5px -1px black;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	background: linear-gradient(to top, #515151, #515151bb);
+  width: 42%;
+  height: 95%;
+  border: 2px solid black;
+  border-radius: 10px;
+  box-shadow: 0 0 5px -1px black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(to top, #515151, #515151bb);
 }
 
 .form-container * {
-	font-family: "Fredoka", sans-serif;
+  font-family: "Fredoka", sans-serif;
 }
 
 h1 {
-	font-size: 2rem;
+  font-size: 2rem;
 }
 
 b {
-	margin: 2px 0 10px;
-	font-size: 1.2rem;
+  margin: 2px 0 10px;
+  font-size: 1.2rem;
 }
 
 .form-container #form {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	width: 80%;
-	row-gap: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 80%;
+  row-gap: 8px;
 }
 
 .form-container #form span {
-	width: 100%;
-	font-size: 1.3rem;
+  width: 100%;
+  font-size: 1.3rem;
 }
 
 input {
-	height: 25px;
+  height: 25px;
 }
 
 input,
 textarea {
-	width: 100%;
-	font-size: 1.2rem;
+  width: 100%;
+  font-size: 1.2rem;
 }
 
 button {
-	width: 100px;
-	height: 40px;
-	border-radius: 5px;
-	margin-bottom: 20px;
-	border: 1px solid black;
-	box-shadow: 0 0 5px 0px black;
-	transition: all 0.3s;
-	font-size: 1.2rem;
+  width: 100px;
+  height: 40px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  border: 1px solid black;
+  box-shadow: 0 0 5px 0px black;
+  transition: all 0.3s;
+  font-size: 1.2rem;
 }
 
 button:hover {
-	box-shadow: 0 0 1px 0px black;
-	transform: translateY(-1px);
+  box-shadow: 0 0 1px 0px black;
+  transform: translateY(-1px);
 }
 
 button:active {
-	width: 98px;
-	box-shadow: none;
-	transform: translateY(1px);
+  width: 98px;
+  box-shadow: none;
+  transform: translateY(1px);
 }

@@ -1,234 +1,238 @@
 * {
-	margin: 0;
-	padding: 0;
+  margin: 0;
+  padding: 0;
 }
 
 main {
-	display: flex;
-	flex-direction: row-reverse;
-	height: 88vh;
+  display: flex;
+  flex-direction: row-reverse;
+  height: 88vh;
+}
+
+.navbar-list li:nth-of-type(4) a {
+  text-decoration: underline !important;
 }
 
 /* NAVBAR */
 
 .navbar {
-	display: flex;
-	align-items: center;
-	flex-direction: column;
-	color: #fff;
-	box-sizing: border-box;
-	padding-top: 20px;
-	width: 25%;
-	background-color: #212121;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  color: #fff;
+  box-sizing: border-box;
+  padding-top: 20px;
+  width: 25%;
+  background-color: #212121;
 }
 
 .navbar p:first-child {
-	font-size: 2rem;
-	font-family: "Bangers", cursive;
+  font-size: 2rem;
+  font-family: "Bangers", cursive;
 }
 
 .navbar select {
-	height: 30px;
-	text-align: center;
+  height: 30px;
+  text-align: center;
 }
 
 .navbar-items-container {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	margin-top: 25px;
-	height: 80%;
-	width: 80%;
-	row-gap: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 25px;
+  height: 80%;
+  width: 80%;
+  row-gap: 20px;
 }
 
 .navbar-items-container button {
-	margin-top: 30px;
-	width: 120px;
-	height: 40px;
-	transition: 0.3s all;
-	font-size: 1.2rem;
+  margin-top: 30px;
+  width: 120px;
+  height: 40px;
+  transition: 0.3s all;
+  font-size: 1.2rem;
 }
 
 .navbar-items-container li {
-	display: flex;
-	align-items: flex-start;
-	flex-direction: column;
-	width: 100%;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  width: 100%;
 }
 
 .navbar-items-container li:first-of-type {
-	align-items: center;
+  align-items: center;
 }
 
 .navbar-items-container li label {
-	font-size: 1.2rem;
+  font-size: 1.2rem;
 }
 
 .navbar-items-container input {
-	text-align: center;
-	width: 100px;
-	font-size: 1.2rem;
-	font-family: "Staatliches", cursive;
+  text-align: center;
+  width: 100px;
+  font-size: 1.2rem;
+  font-family: "Staatliches", cursive;
 }
 
 .navbar-items-container select {
-	width: 104px;
-	height: 25px;
-	font-family: "Staatliches", cursive;
+  width: 104px;
+  height: 25px;
+  font-family: "Staatliches", cursive;
 }
 
 .navbar-items-container li:first-child input {
-	width: 100%;
+  width: 100%;
 }
 
 #in_heroName {
-	height: 25px;
-	text-align: center;
+  height: 25px;
+  text-align: center;
 }
 
 .selects {
-	display: flex;
-	column-gap: 5px;
+  display: flex;
+  column-gap: 5px;
 }
 
 .selects select {
-	width: 100px;
+  width: 100px;
 }
 
 #in_ranking {
-	height: 21px;
+  height: 21px;
 }
 
 /* HEROES CONTAINER */
 
 .heroes_container {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	background-color: #1a2865;
-	overflow-y: auto;
-	width: 75%;
-	padding: 40px;
-	padding-top: 10px;
-	padding-bottom: 75px;
-	position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #1a2865;
+  overflow-y: auto;
+  width: 75%;
+  padding: 40px;
+  padding-top: 10px;
+  padding-bottom: 75px;
+  position: relative;
 }
 
 .heroes_container h1 {
-	margin-bottom: 20px;
-	padding: 10px;
-	border-radius: 10px;
-	font-size: 2.2rem;
-	color: #fff;
-	text-decoration: underline;
-	background-color: #212121;
-	box-shadow: 0 0 2px 1px black;
-	text-shadow: 2px 2px black;
-	font-family: "Bangers", cursive;
-	letter-spacing: 5px;
-	text-transform: uppercase;
+  margin-bottom: 20px;
+  padding: 10px;
+  border-radius: 10px;
+  font-size: 2.2rem;
+  color: #fff;
+  text-decoration: underline;
+  background-color: #212121;
+  box-shadow: 0 0 2px 1px black;
+  text-shadow: 2px 2px black;
+  font-family: "Bangers", cursive;
+  letter-spacing: 5px;
+  text-transform: uppercase;
 }
 
 #alerta_resultado {
-	font-size: 2rem;
-	color: #fff;
-	text-shadow: 2px 2px #000;
-	top: 50%;
-	left: 50%;
-	position: absolute;
-	transform: translate(-50%, -50%);
-	font-family: "Bangers", cursive;
-	letter-spacing: 5px;
-	display: none;
+  font-size: 2rem;
+  color: #fff;
+  text-shadow: 2px 2px #000;
+  top: 50%;
+  left: 50%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  font-family: "Bangers", cursive;
+  letter-spacing: 5px;
+  display: none;
 }
 
 #heroes_cards_container {
-	display: flex;
-	flex-flow: row wrap;
-	box-sizing: border-box;
-	row-gap: 20px;
-	column-gap: 20px;
-	width: 100%;
-	height: 100%;
+  display: flex;
+  flex-flow: row wrap;
+  box-sizing: border-box;
+  row-gap: 20px;
+  column-gap: 20px;
+  width: 100%;
+  height: 100%;
 }
 
 .hero-card {
-	border: 1px solid black;
-	border-radius: 10px;
-	width: 23%;
-	height: 412px;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	background-color: #fff;
-	box-shadow: 0 0 5px -1px black;
+  border: 1px solid black;
+  border-radius: 10px;
+  width: 23%;
+  height: 412px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+  box-shadow: 0 0 5px -1px black;
 }
 
 .hero-name-container {
-	text-align: center;
-	border-bottom: 1px solid black;
-	width: 100%;
-	height: 10%;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	position: relative;
+  text-align: center;
+  border-bottom: 1px solid black;
+  width: 100%;
+  height: 10%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
 }
 
 .hero-name-container span:first-of-type {
-	position: absolute;
-	left: 10px;
-	font-family: "Fredoka", sans-serif;
-	font-weight: 700;
+  position: absolute;
+  left: 10px;
+  font-family: "Fredoka", sans-serif;
+  font-weight: 700;
 }
 
 .hero_name {
-	font-size: 1.2rem;
-	font-family: "Fredoka", sans-serif;
-	font-family: sans-serif;
-	margin-left: 10px;
-	text-transform: capitalize;
+  font-size: 1.2rem;
+  font-family: "Fredoka", sans-serif;
+  font-family: sans-serif;
+  margin-left: 10px;
+  text-transform: capitalize;
 }
 
 .hero-img {
-	height: 70%;
-	max-width: 100%;
+  height: 70%;
+  max-width: 100%;
 }
 
 .bottom-card-container {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: space-evenly;
-	width: 100%;
-	height: 20%;
-	border-top: 1px solid #000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 100%;
+  height: 20%;
+  border-top: 1px solid #000;
 }
 
 .select-container {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	column-gap: 10px;
-	width: 100%;
-	padding: 7px 0 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: 10px;
+  width: 100%;
+  padding: 7px 0 10px;
 }
 
 #avaliar_btn {
-	font-family: "Fredoka", sans-serif;
-	font-size: 1rem;
-	font-weight: 700;
-	padding: 2px;
+  font-family: "Fredoka", sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  padding: 2px;
 }
 
 #nota {
-	font-family: "Fredoka", sans-serif;
-	font-weight: 700;
+  font-family: "Fredoka", sans-serif;
+  font-weight: 700;
 }
 
 #in_nota {
-	width: 50px;
-	text-align: center;
+  width: 50px;
+  text-align: center;
 }

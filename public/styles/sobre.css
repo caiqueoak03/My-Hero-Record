@@ -1,50 +1,54 @@
 main {
-	display: flex;
-	flex-direction: column;
+  display: flex;
+  flex-direction: column;
+}
+
+.navbar-list li:nth-of-type(2) a {
+  text-decoration: underline !important;
 }
 
 main * {
-	font-family: "Fredoka", sans-serif !important;
+  font-family: "Fredoka", sans-serif !important;
 }
 
 main article {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	column-gap: 100px;
-	height: 75vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: 100px;
+  height: 75vh;
 }
 
 main article img {
-	height: 65vh;
+  height: 65vh;
 }
 
 .quem-somos {
-	background: linear-gradient(to right, #0a0487, #0a0487df);
-	color: #fff;
+  background: linear-gradient(to right, #0a0487, #0a0487df);
+  color: #fff;
 }
 
 .como {
-	background: linear-gradient(to right, #ff3333, #ff3333df);
-	column-gap: 50px;
+  background: linear-gradient(to right, #ff3333, #ff3333df);
+  column-gap: 50px;
 }
 
 .porque {
-	background: linear-gradient(to right, #f4cc90, #f4cc90df);
+  background: linear-gradient(to right, #f4cc90, #f4cc90df);
 }
 
 .text-container {
-	display: flex;
-	flex-direction: column;
-	row-gap: 20px;
-	width: 40vw;
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+  width: 40vw;
 }
 .text-container h1 {
-	font-size: 1.8rem;
-	text-align: center;
+  font-size: 1.8rem;
+  text-align: center;
 }
 
 .text-container p {
-	font-size: 1.3rem;
-	text-align: justify;
+  font-size: 1.3rem;
+  text-align: justify;
 }
