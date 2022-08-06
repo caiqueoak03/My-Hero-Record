@@ -12,3 +12,5 @@ Esse projeto tem o intuito de representar um jornal do universo de Boku no Hero 
 
 Regra de negócio das notícias:
 * Aparecerá nas manchetes os heróis com nota igual ou superior a 7, os outros aparecerão no noticiário padrão.
+
+Há um script MySQL contendo, além das tabelas, inserções de notícias e heróis.
